@@ -1,0 +1,55 @@
+.home-bg-cont {
+}
+
+.home-cont-1 {
+  background: linear-gradient(to right, #ffffff 50%, #5199d471 50%);
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  width: 300px;
+  border-radius: 400px;
+  margin: auto;
+  margin-top: 100px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.dark {
+  background: linear-gradient(to right, #01090cd0 50%, #000000de 50%);
+}
+
+.textDark {
+  color: #ffffffd3 !important;
+}
+
+.about-me-section {
+  width: 90%;
+  margin-top: 60px;
+}
+
+.name-span {
+  font-family: Audiowide;
+  color: #7142af;
+}
+
+.about-me-para {
+  font-family: 'Raleway', sans-serif;
+  color: #000000bd;
+  font-size: 1.2em;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-me-para {
+    width: 50%;
+  }
+}
