@@ -1,11 +1,23 @@
 import {Component} from 'react'
+import {FaPlayCircle, FaLinkedinIn, FaInstagram} from 'react-icons/fa'
 import Header from '../Header'
 import Typewriter from '../TypeWriting'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
 class Home extends Component {
+  state = {buttonsVisible: false}
+
+  toggleButtons = () => {
+    this.setState(prevState => ({
+      buttonsVisible: !prevState.buttonsVisible,
+    }))
+  }
+
   render() {
+    const {buttonsVisible} = this.state
+    const extraButtonsClass = buttonsVisible ? 'visible' : ''
+
     return (
       <PortfolioContext.Consumer>
         {value => {
@@ -28,13 +40,30 @@ class Home extends Component {
                       social and technical systems to create impact.
                     </p>
                   </div>
-                  <div>
+                  <div className="profile-pic-cont">
                     <img
                       className="profile-pic"
                       src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1719912556/IMG_20240702_145731_emoka4.jpg"
                       alt="profile-pic"
                     />
-                    <div className="profile-dot"></div>
+
+                    <div className="button-container">
+                      <button
+                        onClick={this.toggleButtons}
+                        type="button"
+                        className="profile-dot"
+                      >
+                        <FaPlayCircle />
+                      </button>
+                      <div className={`extra-buttons ${extraButtonsClass}`}>
+                        <button className="extra-button profile-dot left">
+                          <FaInstagram />
+                        </button>
+                        <button className="extra-button profile-dot right">
+                          <FaLinkedinIn />
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
