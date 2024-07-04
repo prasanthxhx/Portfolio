@@ -24,6 +24,12 @@
   margin-top: 60px;
 }
 
+.about-me-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .name-span {
   font-family: Audiowide;
   color: #7142af;
@@ -43,6 +49,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .profile-pic {
@@ -126,9 +133,86 @@
   transform: translateX(50px);
 }
 
+.left:hover {
+  color: #1754d8;
+}
+
+.right:hover {
+  color: #5f92ff;
+}
+
+.role-h1 {
+  font-size: 2.3em;
+  line-height: 1.3em;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-top: 0;
+}
+
+.contact-cont {
+  display: flex;
+  align-items: center;
+}
+
+.contact-btn {
+  margin-left: 0px;
+  background-color: #000000;
+  color: #ff5fbc;
+  transition: 600ms ease-out;
+}
+
+.contact-btn:hover {
+  transition: 600ms ease-out;
+  color: #5fffaf;
+}
+
+.phone-btn {
+  margin-left: 10px;
+  color: #ffd45f;
+}
+
+.phone-btn:hover {
+  color: #7aff5f;
+}
+
+.phone-cont {
+  background-color: #ff7e5f;
+  color: #ffffffcc;
+  font-weight: bold;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.phone-cont {
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-200px);
+}
+
+.phone-visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(100px);
+  transition: all 0.3s ease-in-out;
+}
+
 @media screen and (min-width: 576px) {
   .profile-pic {
     width: 65%;
+  }
+  .role-h1 {
+    font-size: 2.8em;
+    letter-spacing: 10px;
   }
 }
 
@@ -144,5 +228,19 @@
   .profile-pic {
     width: 300px;
     margin-top: 50px;
+  }
+  .role-h1 {
+    font-size: 2.5em;
+    letter-spacing: 6px;
+  }
+  .profile-pic-cont {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .role-h1 {
+    font-size: 3em;
+    letter-spacing: 10px;
   }
 }
