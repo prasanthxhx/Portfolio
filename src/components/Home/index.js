@@ -1,6 +1,13 @@
 import {Component} from 'react'
-import {FaPlayCircle, FaLinkedinIn, FaInstagram, FaGithub} from 'react-icons/fa'
-import {IoLogoWhatsapp} from 'react-icons/io'
+import {
+  FaPlayCircle,
+  FaLinkedinIn,
+  FaInstagram,
+  FaGithub,
+  FaUserGraduate,
+  FaExternalLinkAlt,
+} from 'react-icons/fa'
+import {IoLogoWhatsapp, IoMdMailUnread, IoIosTime} from 'react-icons/io'
 import Header from '../Header'
 import Typewriter from '../TypeWriting'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
@@ -65,6 +72,12 @@ class Home extends Component {
                         +91 9943474260
                       </div>
                     </div>
+                    <button className="email-btn" type="button">
+                      <span className="profile-dot mail-icon">
+                        <IoMdMailUnread />{' '}
+                      </span>
+                      Contact Me
+                    </button>
                   </div>
                   <div className="profile-pic-cont">
                     <img
@@ -89,6 +102,49 @@ class Home extends Component {
                           <FaLinkedinIn />
                         </button>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="education-section">
+                <h1 className="edu-h1">
+                  <FaUserGraduate className="edu-icon" />
+                  Education
+                </h1>
+                <div className="edu-card-cont">
+                  <div className="edu-card">
+                    <img
+                      className="edu-institute-img"
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720184633/tuu9eixat7cdsiskhfua.jpg"
+                      alt="institute-img"
+                    />
+                    <hr className="inst-hr-line" />
+                    <div className="institute-description">
+                      <div className="inst-h1-cont">
+                        {' '}
+                        <a
+                          className="anchor-link"
+                          href="https://www.ccbp.in/"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <h4 className="institute-h1">
+                            CCBP Intensive 4.0 Tech Program
+                            <FaExternalLinkAlt className="institute-link-icon" />{' '}
+                          </h4>
+                        </a>
+                        <p className="duration-para">
+                          <IoIosTime className="duration-icon" />
+                          April 2023 - Present
+                        </p>
+                      </div>
+                      <h5 className="course-h1">FullStack Web Development</h5>
+                      <p className="nxtwave-para">
+                        CCBP Intensive is an Industry Ready Certification
+                        Program focusing on full-stack web development that
+                        provides training through an immersive hands-on and
+                        reverse-engineered curriculum
+                      </p>
                     </div>
                   </div>
                 </div>

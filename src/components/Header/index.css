@@ -180,3 +180,10 @@
     margin-right: 18px;
   }
 }
+
+/* @media screen and (min-width: 992px) {
+  .nav-ul-cont {
+    width: 70%;
+    margin-left: auto;
+  }
+} */
