@@ -8,6 +8,7 @@ import {
   FaExternalLinkAlt,
 } from 'react-icons/fa'
 import {IoLogoWhatsapp, IoMdMailUnread, IoIosTime} from 'react-icons/io'
+import {ImBooks} from 'react-icons/im'
 import Header from '../Header'
 import Typewriter from '../TypeWriting'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
@@ -106,13 +107,15 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <div className="education-section">
+              <div
+                className={`education-section ${darkMode ? 'dark-edu' : ''}`}
+              >
                 <h1 className="edu-h1">
                   <FaUserGraduate className="edu-icon" />
                   Education
                 </h1>
                 <div className="edu-card-cont">
-                  <div className="edu-card">
+                  <div className="edu-card edu-card-1">
                     <img
                       className="edu-institute-img"
                       src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720184633/tuu9eixat7cdsiskhfua.jpg"
@@ -135,7 +138,7 @@ class Home extends Component {
                         </a>
                         <p className="duration-para">
                           <IoIosTime className="duration-icon" />
-                          April 2023 - Present
+                          2023 - 2024
                         </p>
                       </div>
                       <h5 className="course-h1">FullStack Web Development</h5>
@@ -147,7 +150,246 @@ class Home extends Component {
                       </p>
                     </div>
                   </div>
+
+                  <div className="edu-card edu-card-2">
+                    <img
+                      className="edu-institute-img"
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720248670/wflxjjwxzuu4qzenk4ry.png"
+                      alt="institute-img"
+                    />
+                    <hr className="inst-hr-line" />
+                    <div className="institute-description">
+                      <div className="inst-h1-cont">
+                        {' '}
+                        <a
+                          className="anchor-link"
+                          href="https://www.ssmce.ac.in/"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <h4 className="institute-h1">
+                            SSM College of Engineering, Namakkal
+                            <FaExternalLinkAlt className="institute-link-icon" />{' '}
+                          </h4>
+                        </a>
+                        <p className="duration-para">
+                          <IoIosTime className="duration-icon" />
+                          2017 - 2021
+                        </p>
+                      </div>
+                      <h5 className="course-h1">Bachelor of Engineering</h5>
+                      <p className="nxtwave-para">
+                        B.E (Bachelor of Engineering)_Electronics and
+                        Communication Engineering (ECE)
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              <div
+                className={`skills-section ${darkMode ? 'dark-skills' : ''}`}
+              >
+                <h1 className="edu-h1">
+                  <ImBooks className="edu-icon" />
+                  Skills
+                </h1>
+
+                <ul className="skills-ul-cont">
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/bfkpehm1bmhn8ifsxhpm.webp"
+                      alt="skill-img"
+                    />
+
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/mrqwsgcrz3wukdueuazd.webp"
+                      alt="skill-img"
+                    />
+
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/ieioczxretvjpb9igmwr.jpg"
+                      alt="skill-img"
+                    />
+
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/xrqp2ddyvwia6olzr2dn.svg"
+                      alt="skill-img"
+                    />
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/javascript-essentials?id=GYKVXQMNWC"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720419601/q5iysomvs9qvudpdgmnm.png"
+                      alt="skill-img"
+                    />
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/react-js?id=PTCQBCYRNA"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/pn2dv7dtv6evskxrutdo.png"
+                      alt="skill-img"
+                    />
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/programming-foundations?id=PHCLCVZZIP"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/t25ytvfgglzewcar8dzz.png"
+                      alt="skill-img"
+                    />
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/node-js?id=MJWTMSXGTZ"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/yx5xnzbqlba4ixte6jbt.png"
+                      alt="skill-img"
+                    />
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/node-js?id=MJWTMSXGTZ"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/uemawyzdqdstnnjdhhck.png"
+                      alt="skill-img"
+                    />
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/introduction-to-databases?id=LDHIDLLMVN"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                  <li className="skills-card">
+                    <img
+                      className={`skill-img ${
+                        darkMode ? 'dark-skill-img' : ''
+                      }`}
+                      src="https://cdn-icons-png.flaticon.com/512/4494/4494740.png"
+                      alt="skill-img"
+                    />
+                    <a
+                      className={`anchor-link anchor-skill-link ${
+                        darkMode ? 'dark-anchor-skill' : ''
+                      }`}
+                      href="https://certificates.ccbp.in/intensive/developer-foundations?id=AYJBMIMDCC"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaExternalLinkAlt className="Certificate-icon" />
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           )
