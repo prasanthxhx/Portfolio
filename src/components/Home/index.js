@@ -9,10 +9,167 @@ import {
 } from 'react-icons/fa'
 import {IoLogoWhatsapp, IoMdMailUnread, IoIosTime} from 'react-icons/io'
 import {ImBooks} from 'react-icons/im'
+import {GiAchievement} from 'react-icons/gi'
 import Header from '../Header'
 import Typewriter from '../TypeWriting'
+import SkillsCard from '../SkillsCard'
+import CertificateCard from '../CertificateCard'
+import EducationCard from '../EducationCard'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
+
+// education details list
+const educationDetails = [
+  {
+    id: 1,
+    instituteName: 'CCBP Intensive 4.0 Tech Program',
+    specialization: 'FullStack Web Development',
+    description:
+      'CCBP Intensive is an Industry Ready Certification Program focusing on full-stack web development that provides training through an immersive hands-on and reverse-engineered curriculum',
+    date: '2023 - 2024',
+    instituteLogo:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720184633/tuu9eixat7cdsiskhfua.jpg',
+    instituteWebsite: 'https://www.ccbp.in/',
+  },
+  {
+    id: 2,
+    instituteName: 'SSM College of Engineering, Namakkal',
+    specialization: 'Bachelor of Engineering',
+    description:
+      'B.E (Bachelor of Engineering)_Electronics and Communication Engineering (ECE)',
+    date: '2017 - 2021',
+    instituteLogo:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720248670/wflxjjwxzuu4qzenk4ry.png',
+    instituteWebsite: 'https://www.ssmce.ac.in/',
+  },
+]
+
+// skills details list
+const skillsDetails = [
+  {
+    id: 1,
+    name: 'html',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/bfkpehm1bmhn8ifsxhpm.webp',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO',
+  },
+  {
+    id: 2,
+    name: 'css',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/mrqwsgcrz3wukdueuazd.webp',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO',
+  },
+  {
+    id: 3,
+    name: 'css',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/ieioczxretvjpb9igmwr.jpg',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO',
+  },
+  {
+    id: 4,
+    name: 'javaScript',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/xrqp2ddyvwia6olzr2dn.svg',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/javascript-essentials?id=GYKVXQMNWC',
+  },
+  {
+    id: 5,
+    name: 'reactJs',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720419601/q5iysomvs9qvudpdgmnm.png',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/react-js?id=PTCQBCYRNA',
+  },
+  {
+    id: 6,
+    name: 'python',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/pn2dv7dtv6evskxrutdo.png',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/programming-foundations?id=PHCLCVZZIP',
+  },
+  {
+    id: 7,
+    name: 'express',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/t25ytvfgglzewcar8dzz.png',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/node-js?id=MJWTMSXGTZ',
+  },
+  {
+    id: 8,
+    name: 'nodeJs',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/yx5xnzbqlba4ixte6jbt.png',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/node-js?id=MJWTMSXGTZ',
+  },
+  {
+    id: 9,
+    name: 'sql',
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/uemawyzdqdstnnjdhhck.png',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/introduction-to-databases?id=LDHIDLLMVN',
+  },
+  {
+    id: 10,
+    name: 'git',
+    imgUrl: 'https://cdn-icons-png.flaticon.com/512/4494/4494740.png',
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/developer-foundations?id=AYJBMIMDCC',
+  },
+]
+
+// certificate Details list
+const certificateDetails = [
+  {
+    id: 1,
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/lrl1onsbdlu5hhdy8aoh.png',
+    courseName: 'Exponential Performance Mindset',
+    skillsCovered: [
+      'Creating Personal Identity',
+      'Integrity',
+      'Setting Goals & Priorities',
+    ],
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/xpm-4-0-fundamentals?id=DIDROTQQDQ',
+  },
+  {
+    id: 2,
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/pdpvago2hvmcaxszbmup.png',
+    courseName: 'Build Your Own Dynamic Web Application',
+    skillsCovered: ['JavaScript'],
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/dynamic-web-application?id=KUZPREKBCO',
+  },
+  {
+    id: 3,
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/i6eja25f3wuwm73lzwog.png',
+    courseName: 'Build Your Own Responsive Website',
+    skillsCovered: ['Bootstrap', 'Flexbox'],
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/responsive-website?id=QWXZMDDVIZ',
+  },
+  {
+    id: 4,
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/i6eja25f3wuwm73lzwog.png',
+    courseName: 'Responsive Web Design Using Flexbox',
+    skillsCovered: ['Flexbox'],
+    certificateLink:
+      'https://certificates.ccbp.in/intensive/flexbox?id=TLNUCRSTSS',
+  },
+]
 
 class Home extends Component {
   state = {buttonsVisible: false, phoneBtnVisible: false}
@@ -114,77 +271,11 @@ class Home extends Component {
                   <FaUserGraduate className="edu-icon" />
                   Education
                 </h1>
-                <div className="edu-card-cont">
-                  <div className="edu-card edu-card-1">
-                    <img
-                      className="edu-institute-img"
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720184633/tuu9eixat7cdsiskhfua.jpg"
-                      alt="institute-img"
-                    />
-                    <hr className="inst-hr-line" />
-                    <div className="institute-description">
-                      <div className="inst-h1-cont">
-                        {' '}
-                        <a
-                          className="anchor-link"
-                          href="https://www.ccbp.in/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <h4 className="institute-h1">
-                            CCBP Intensive 4.0 Tech Program
-                            <FaExternalLinkAlt className="institute-link-icon" />{' '}
-                          </h4>
-                        </a>
-                        <p className="duration-para">
-                          <IoIosTime className="duration-icon" />
-                          2023 - 2024
-                        </p>
-                      </div>
-                      <h5 className="course-h1">FullStack Web Development</h5>
-                      <p className="nxtwave-para">
-                        CCBP Intensive is an Industry Ready Certification
-                        Program focusing on full-stack web development that
-                        provides training through an immersive hands-on and
-                        reverse-engineered curriculum
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="edu-card edu-card-2">
-                    <img
-                      className="edu-institute-img"
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720248670/wflxjjwxzuu4qzenk4ry.png"
-                      alt="institute-img"
-                    />
-                    <hr className="inst-hr-line" />
-                    <div className="institute-description">
-                      <div className="inst-h1-cont">
-                        {' '}
-                        <a
-                          className="anchor-link"
-                          href="https://www.ssmce.ac.in/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <h4 className="institute-h1">
-                            SSM College of Engineering, Namakkal
-                            <FaExternalLinkAlt className="institute-link-icon" />{' '}
-                          </h4>
-                        </a>
-                        <p className="duration-para">
-                          <IoIosTime className="duration-icon" />
-                          2017 - 2021
-                        </p>
-                      </div>
-                      <h5 className="course-h1">Bachelor of Engineering</h5>
-                      <p className="nxtwave-para">
-                        B.E (Bachelor of Engineering)_Electronics and
-                        Communication Engineering (ECE)
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <ul className="edu-card-cont">
+                  {educationDetails.map(eachItem => (
+                    <EducationCard educationData={eachItem} key={eachItem.id} />
+                  ))}
+                </ul>
               </div>
 
               <div
@@ -196,199 +287,29 @@ class Home extends Component {
                 </h1>
 
                 <ul className="skills-ul-cont">
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/bfkpehm1bmhn8ifsxhpm.webp"
-                      alt="skill-img"
-                    />
+                  {skillsDetails.map(eachItem => (
+                    <SkillsCard skillData={eachItem} key={eachItem.id} />
+                  ))}
+                </ul>
+              </div>
 
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/mrqwsgcrz3wukdueuazd.webp"
-                      alt="skill-img"
-                    />
+              <div
+                className={`extra-certificates-section ${
+                  darkMode ? 'dark-extra-certificates-section' : ''
+                }`}
+              >
+                <h1 className="edu-h1">
+                  <GiAchievement className="edu-icon" />
+                  Extra Cerificates
+                </h1>
 
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/ieioczxretvjpb9igmwr.jpg"
-                      alt="skill-img"
+                <ul className="certificates-ul-cont">
+                  {certificateDetails.map(eachItem => (
+                    <CertificateCard
+                      certificateData={eachItem}
+                      key={eachItem.id}
                     />
-
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/static-website?id=XMEUZDHSJO"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/xrqp2ddyvwia6olzr2dn.svg"
-                      alt="skill-img"
-                    />
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/javascript-essentials?id=GYKVXQMNWC"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720419601/q5iysomvs9qvudpdgmnm.png"
-                      alt="skill-img"
-                    />
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/react-js?id=PTCQBCYRNA"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/pn2dv7dtv6evskxrutdo.png"
-                      alt="skill-img"
-                    />
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/programming-foundations?id=PHCLCVZZIP"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/t25ytvfgglzewcar8dzz.png"
-                      alt="skill-img"
-                    />
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/node-js?id=MJWTMSXGTZ"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418887/yx5xnzbqlba4ixte6jbt.png"
-                      alt="skill-img"
-                    />
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/node-js?id=MJWTMSXGTZ"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1720418886/uemawyzdqdstnnjdhhck.png"
-                      alt="skill-img"
-                    />
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/introduction-to-databases?id=LDHIDLLMVN"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
-                  <li className="skills-card">
-                    <img
-                      className={`skill-img ${
-                        darkMode ? 'dark-skill-img' : ''
-                      }`}
-                      src="https://cdn-icons-png.flaticon.com/512/4494/4494740.png"
-                      alt="skill-img"
-                    />
-                    <a
-                      className={`anchor-link anchor-skill-link ${
-                        darkMode ? 'dark-anchor-skill' : ''
-                      }`}
-                      href="https://certificates.ccbp.in/intensive/developer-foundations?id=AYJBMIMDCC"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaExternalLinkAlt className="Certificate-icon" />
-                    </a>
-                  </li>
+                  ))}
                 </ul>
               </div>
             </div>

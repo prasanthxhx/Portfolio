@@ -1,0 +1,96 @@
+.certificate-card {
+  background-color: #ffffff7a;
+  width: 270px;
+  height: 409px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 400ms ease-out;
+  margin-bottom: 20px;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  transition: 400ms ease-out;
+}
+
+.certificate-img {
+  width: 100%;
+}
+
+.certificate-desc-cont {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.certificate-course-name {
+  font-family: 'Roboto';
+  color: #1a2d80;
+  text-align: start;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+
+.skill-covered-ul-cont {
+  list-style-type: decimal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skill-covered {
+  font-family: 'Changa', sans-serif;
+  color: #0b3831;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 50px;
+  width: auto;
+}
+
+.color-1 {
+  background-color: #72dd41;
+}
+
+.color-2 {
+}
+
+.color-3 {
+}
+
+.certificate-btn {
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50px;
+  margin-top: 10px;
+  align-self: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 600ms ease-out;
+}
+
+.certificate-btn:hover {
+  box-shadow: none;
+  background-color: #b18bddd3;
+  transition: 400ms ease-out;
+}
+
+@media screen and (min-width: 576px) {
+  .certificate-card {
+    margin: 10px;
+  }
+}
