@@ -316,21 +316,27 @@
   align-self: center;
   flex-wrap: wrap;
   margin-top: 50px;
+  gap: 40px;
 }
 
 /* extra certificates section */
 
 .extra-certificates-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720436331/zfc2tspigofuauonn025.jpg');
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720533070/alubofyqcovzbgzjgdja.webp');
   background-size: cover;
   min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 
 .dark-extra-certificates-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720440774/g0lfjpvn8gdpnrt6oemt.avif');
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720533070/qoqhkkkqccem1rvju2hz.jpg');
+}
+
+.edu-cert-icon{
+  font-size: 40px;
 }
 
 .certificates-ul-cont {
@@ -342,7 +348,8 @@
   align-items: center;
   align-self: center;
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-top: 60px;
+  gap: 20px;
 }
 
 @media screen and (min-width: 576px) {

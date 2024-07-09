@@ -1,5 +1,5 @@
 .certificate-card {
-  background-color: #ffffff7a;
+  background-color: #ffffffcb;
   width: 270px;
   height: 409px;
   padding: 20px;
@@ -8,16 +8,18 @@
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: 400ms ease-out;
-  margin-bottom: 20px;
+  border-radius: 0px 20px 20px 20px;
 }
 
 .certificate-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px 8px rgba(0, 0, 0, 0.2);
   transition: 400ms ease-out;
 }
 
 .certificate-img {
   width: 100%;
+  opacity: 0.5;
 }
 
 .certificate-desc-cont {
@@ -31,7 +33,7 @@
 
 .certificate-course-name {
   font-family: 'Roboto';
-  color: #1a2d80;
+  color: #228327;
   text-align: start;
   margin: 0;
   margin-top: 15px;
@@ -48,25 +50,15 @@
 
 .skill-covered {
   font-family: 'Changa', sans-serif;
-  color: #0b3831;
+  color: #13a02b;
   font-size: 13px;
   font-weight: 500;
   padding: 0px 10px 0px 10px;
   margin-bottom: 10px;
-  background-color: #ffffff;
+  background-color: #000000d0;
   text-align: center;
   border-radius: 50px;
   width: auto;
-}
-
-.color-1 {
-  background-color: #72dd41;
-}
-
-.color-2 {
-}
-
-.color-3 {
 }
 
 .certificate-btn {
@@ -90,7 +82,4 @@
 }
 
 @media screen and (min-width: 576px) {
-  .certificate-card {
-    margin: 10px;
-  }
 }

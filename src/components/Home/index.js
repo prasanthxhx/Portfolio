@@ -299,8 +299,8 @@ class Home extends Component {
                 }`}
               >
                 <h1 className="edu-h1">
-                  <GiAchievement className="edu-icon" />
-                  Extra Cerificates
+                  <GiAchievement className="edu-icon edu-cert-icon" />
+                  More Cerificates
                 </h1>
 
                 <ul className="certificates-ul-cont">

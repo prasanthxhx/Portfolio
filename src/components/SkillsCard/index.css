@@ -1,7 +1,6 @@
 .skills-card {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .skill-img {
@@ -46,7 +45,5 @@
 }
 
 @media screen and (min-width: 445px) {
-  .skills-card {
-    margin-right: 40px;
-  }
+  
 }
