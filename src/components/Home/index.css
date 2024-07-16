@@ -247,8 +247,7 @@
 /* education section */
 
 .education-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720183606/pvwtzup1kwfa9jy8ri9k.jpg');
-  background-size: cover;
+  background: linear-gradient(147deg, #7bd5f5, #1f2f98);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -257,6 +256,7 @@
 
 .dark-edu {
   background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720262598/c0rha2umxixtwhgxdxgd.jpg');
+  background-size: cover;
 }
 
 .edu-h1 {
@@ -294,16 +294,16 @@
 /* skills section */
 
 .skills-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720264911/aritll3pfrsgzzuowrnp.jpg');
-  background-size: cover;
+  background: linear-gradient(147deg, #329d9c, #56c596);
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .dark-skills {
   background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720322138/peehwny9p3yfjx2o27r6.jpg');
+  background-size: cover;
 }
 
 .skills-ul-cont {
@@ -322,20 +322,18 @@
 /* extra certificates section */
 
 .extra-certificates-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720533070/alubofyqcovzbgzjgdja.webp');
-  background-size: cover;
-  min-height: 100vh;
+  background: linear-gradient(147deg, #4397bd, #f9e07f);
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .dark-extra-certificates-section {
   background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720533070/qoqhkkkqccem1rvju2hz.jpg');
 }
 
-.edu-cert-icon{
+.edu-cert-icon {
   font-size: 40px;
 }
 
@@ -350,6 +348,21 @@
   flex-wrap: wrap;
   margin-top: 60px;
   gap: 20px;
+}
+
+/* projects section */
+
+.project-section {
+  background: linear-gradient(147deg, #205072, #329d9c);
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-project-section {
+  background: #131842;
 }
 
 @media screen and (min-width: 576px) {

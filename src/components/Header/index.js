@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {MdSort} from 'react-icons/md'
 import {FcApproval} from 'react-icons/fc'
-import {IoMdSunny, IoIosMoon} from 'react-icons/io'
+import DarkModeSwitch from '../DarkModeSwitch'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
@@ -31,17 +31,7 @@ class Header extends Component {
                   alt="profile-logo"
                 />
                 <div className="nav-ham-cont">
-                  <button
-                    type="button"
-                    className="dark-mode-btn"
-                    onClick={changeDarkMode}
-                  >
-                    {darkMode ? (
-                      <IoMdSunny className="darkModeIcon" />
-                    ) : (
-                      <IoIosMoon />
-                    )}
-                  </button>
+                  <DarkModeSwitch changeToDarkMode={changeDarkMode} />
                   <button
                     type="button"
                     className="ham-btn"

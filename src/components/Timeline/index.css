@@ -1,0 +1,8 @@
+.custom-timeline-element .vertical-timeline-element-content {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.git-visualizer-img {
+  width: 250px;
+}

@@ -1,43 +1,39 @@
 import {FaExternalLinkAlt} from 'react-icons/fa'
-import './index.css'
 
-const certificateData = {
-  id: 1,
-  imgUrl:
-    'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/lrl1onsbdlu5hhdy8aoh.png',
-  courseName: 'Exponential Performance Mindset',
-  skillsCovered: [
-    'Creating Personal Identity',
-    'Integrity',
-    'Setting Goals & Priorities',
-  ],
-  certificateLink:
-    'https://certificates.ccbp.in/intensive/xpm-4-0-fundamentals?id=DIDROTQQDQ',
-}
+import './index.css'
 
 const CertificateCard = props => {
   const {certificateData} = props
-  const {
-    id,
-    imgUrl,
-    courseName,
-    skillsCovered,
-    certificateLink,
-  } = certificateData
+  const {courseName, skillsCovered, certificateLink} = certificateData
 
   return (
-    <li className="certificate-card">
-      <img className="certificate-img" src={imgUrl} alt="certificate-img" />
-      <div className="certificate-desc-cont">
-        <h5 className="certificate-course-name">{courseName}</h5>
+    <li className="card">
+      <div className="top-section">
+        <div className="border"></div>
+        <div className="icons">
+          <div className="logo">
+            <span className="cert-logo">CFT</span>
+          </div>
+          <div className="social-media"></div>
+        </div>
+      </div>
+      <div className="bottom-section">
+        <span className="title">{courseName}</span>
         <ul className="skill-covered-ul-cont">
           {skillsCovered.map(eachItem => (
             <li className="skill-covered">{eachItem}</li>
           ))}
         </ul>
-        <button className="certificate-btn" type="button">
-          <FaExternalLinkAlt />
-        </button>
+        <a
+          className="anchor-link anchor-cert-link"
+          href={certificateLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button className="certificate-btn" type="button">
+            <FaExternalLinkAlt />
+          </button>
+        </a>
       </div>
     </li>
   )

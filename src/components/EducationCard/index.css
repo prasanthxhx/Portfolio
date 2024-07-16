@@ -64,14 +64,15 @@
 
 .course-h1 {
   font-family: AudioWide;
-  color: #60c740;
+  /* color: #16801e; */
+  color: #a5188e;
   margin: 0;
   padding-bottom: 10px;
 }
 
 .duration-para {
   font-family: AudioWide;
-  color: #bea414;
+  color: #c2a70c;
   margin: 0;
   padding-bottom: 10px;
   display: flex;

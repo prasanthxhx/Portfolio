@@ -10,11 +10,13 @@ import {
 import {IoLogoWhatsapp, IoMdMailUnread, IoIosTime} from 'react-icons/io'
 import {ImBooks} from 'react-icons/im'
 import {GiAchievement} from 'react-icons/gi'
+import {RiComputerFill} from 'react-icons/ri'
 import Header from '../Header'
 import Typewriter from '../TypeWriting'
 import SkillsCard from '../SkillsCard'
 import CertificateCard from '../CertificateCard'
 import EducationCard from '../EducationCard'
+import Timeline from '../Timeline'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
@@ -291,6 +293,19 @@ class Home extends Component {
                     <SkillsCard skillData={eachItem} key={eachItem.id} />
                   ))}
                 </ul>
+              </div>
+
+              <div
+                className={`project-section ${
+                  darkMode ? 'dark-project-section' : ''
+                }`}
+              >
+                <h1 className="edu-h1">
+                  <RiComputerFill className="edu-icon" />
+                  Projects
+                </h1>
+
+                <Timeline />
               </div>
 
               <div
