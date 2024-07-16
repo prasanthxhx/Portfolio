@@ -1,3 +1,24 @@
+/* background-colors */
+
+.color-1 {
+  background-color: #ffffff;
+}
+.color-2 {
+  background-color: #4aecdf;
+}
+.color-3 {
+  background-color: #4aec93;
+}
+.color-4 {
+  background-color: #ec7975;
+}
+.color-5 {
+  background-color: #ec4ae4;
+}
+.color-6 {
+  background-color: #65ec4a;
+}
+
 .custom-timeline-element .vertical-timeline-element-content {
   border-bottom: none !important;
   box-shadow: none !important;
@@ -5,4 +26,42 @@
 
 .git-visualizer-img {
   width: 250px;
+}
+
+.project-h1 {
+  font-family: AudioWide;
+  font-size: 2em;
+}
+
+.project-desc {
+  font-family: 'Changa', sans-serif;
+  font-size: 1em;
+}
+
+.tech-used-h1 {
+  font-family: AudioWide;
+  font-style: italic;
+  color: #7effbe;
+}
+
+.technologies-ul-cont {
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-li-item {
+  font-family: 'Changa', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: auto;
+  padding: 2px 10px 2px 10px;
 }

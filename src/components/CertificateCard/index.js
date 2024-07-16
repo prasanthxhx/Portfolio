@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid'
 import {FaExternalLinkAlt} from 'react-icons/fa'
 
 import './index.css'
@@ -21,7 +22,9 @@ const CertificateCard = props => {
         <span className="title">{courseName}</span>
         <ul className="skill-covered-ul-cont">
           {skillsCovered.map(eachItem => (
-            <li className="skill-covered">{eachItem}</li>
+            <li className="skill-covered" key={uuidv4()}>
+              {eachItem}
+            </li>
           ))}
         </ul>
         <a

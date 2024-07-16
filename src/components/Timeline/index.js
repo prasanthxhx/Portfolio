@@ -2,56 +2,117 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component'
+import {v4 as uuidv4} from 'uuid'
 import {IoLogoWhatsapp} from 'react-icons/io'
 import 'react-vertical-timeline-component/style.min.css'
 import './index.css'
 
+const projectDetails = [
+  {
+    id: 1,
+    title: 'Github Profile Visualizer',
+    description:
+      'Implemented GitHub Profile Visualizer App using React, designed to provide users with a seamless way to search for GitHub usernames and retrieve comprehensive user information using the GitHub API.',
+    techUsed: [
+      'React JS',
+      'JS',
+      'CSS',
+      'Routing',
+      'GitHub API',
+      'API Key',
+      'REST API Calls',
+      'Authorization',
+      'Recharts',
+      'Figma',
+    ],
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721113726/bpc3p1pc5oyzv0ythezr.png',
+    date: 'May-2024',
+  },
+  {
+    id: 2,
+    title: 'Jobby App',
+    description:
+      'Implemented Jobby App where users can log in and can see a list of jobs with search by job title, filters based on Salary range and Employment type, etc',
+    techUsed: [
+      'React JS',
+      'JS',
+      'CSS',
+      'Bootstrap',
+      'Routing',
+      'REST API Calls',
+      'Local Storage',
+      'JWT Token',
+      'Authorization',
+      'Authentication',
+    ],
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721115221/igeqbnopki2vbrxpbclg.png',
+    date: 'April-2024',
+  },
+  {
+    id: 3,
+    title: 'Nxt Trendz App',
+    description:
+      'Developed a e-commerce website named Nxt Trendz, showcasing a fully functional online shopping platform. Ensured a mobile-friendly and responsive interface for optimal user experience across devices.',
+    techUsed: [
+      'React JS',
+      'JS',
+      'CSS',
+      'HTML',
+      'Routing',
+      'Routing',
+      'REST API Calls',
+      'JWT Token',
+      'Authorization',
+      'Authentication',
+    ],
+    imgUrl:
+      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721114299/ldqycikwscqqm9xptgua.png',
+    date: 'March-2024',
+  },
+]
+
+// returns a random background color className
+const getRandColor = () => {
+  const randNum = Math.floor(Math.random() * 6) + 1
+  return `color-${randNum}`
+}
+
 const Timeline = props => {
   return (
     <VerticalTimeline>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work custom-timeline-element"
-        contentStyle={{
-          background: 'transparent',
-          color: '#fff',
-        }}
-        contentArrowStyle={{borderRight: '7px solid  rgb(33, 150, 243)'}}
-        date="2011 - present"
-        iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
-        icon={<IoLogoWhatsapp />}
-      >
-        <img
-          className="git-visualizer-img"
-          src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1721113726/bpc3p1pc5oyzv0ythezr.png"
-          alt="git-profile-visualizer-img"
-        />
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work custom-timeline-element"
-        contentStyle={{background: 'transparent', color: '#fff'}}
-        date="2010 - 2011"
-        iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
-        icon={<IoLogoWhatsapp />}
-      >
-        <img
-          className="git-visualizer-img"
-          src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1721114299/ldqycikwscqqm9xptgua.png"
-          alt="nxtTrendz-img"
-        />
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work custom-timeline-element"
-        contentStyle={{background: 'transparent', color: '#fff'}}
-        date="2008 - 2010"
-        iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
-        icon={<IoLogoWhatsapp />}
-      >
-        <img
-          className="git-visualizer-img"
-          src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1721115221/igeqbnopki2vbrxpbclg.png"
-          alt="jobby-app-img"
-        />
-      </VerticalTimelineElement>
+      {projectDetails.map(eachItem => (
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work custom-timeline-element"
+          contentStyle={{
+            background: 'transparent',
+            color: '#fff',
+          }}
+          contentArrowStyle={{borderRight: '7px solid  rgb(33, 150, 243)'}}
+          date={eachItem.date}
+          iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
+          icon={<IoLogoWhatsapp />}
+        >
+          <img
+            className="git-visualizer-img"
+            src={eachItem.imgUrl}
+            alt="project-img"
+          />
+          <div>
+            <h1 className="project-h1">{eachItem.title}</h1>
+            <p className="project-desc">{eachItem.description}</p>
+            <h4 className="tech-used-h1">Technologies Used</h4>
+            <ul className="technologies-ul-cont">
+              {eachItem.techUsed.map(eachItem => (
+                <li className={`tech-li-item ${getRandColor()}`} key={uuidv4()}>
+                  {eachItem}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </VerticalTimelineElement>
+      ))}
       <VerticalTimelineElement
         iconStyle={{background: 'rgb(16, 204, 82)', color: '#fff'}}
         icon={<IoLogoWhatsapp />}
