@@ -7,7 +7,7 @@
   position: relative;
   width: var(--width-of-switch);
   height: var(--height-of-switch);
-  margin-right: 35px;
+  margin-right: 30px;
 }
 
 .switch input {
@@ -48,5 +48,7 @@ input:checked + .slider {
 input:checked + .slider:before {
   left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
   background: #303136;
-  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  box-shadow:
+    inset -3px -2px 5px -2px #8983f7,
+    inset -10px -4px 0 0 #a3dafb;
 }

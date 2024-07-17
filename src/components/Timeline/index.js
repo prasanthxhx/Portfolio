@@ -3,6 +3,7 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component'
 import {v4 as uuidv4} from 'uuid'
+import {FaGithub, FaBusinessTime, FaCreditCard, FaStar} from 'react-icons/fa'
 import {IoLogoWhatsapp} from 'react-icons/io'
 import 'react-vertical-timeline-component/style.min.css'
 import './index.css'
@@ -28,6 +29,7 @@ const projectDetails = [
     imgUrl:
       'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721113726/bpc3p1pc5oyzv0ythezr.png',
     date: 'May-2024',
+    icon: <FaGithub />,
   },
   {
     id: 2,
@@ -49,6 +51,7 @@ const projectDetails = [
     imgUrl:
       'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721115221/igeqbnopki2vbrxpbclg.png',
     date: 'April-2024',
+    icon: <FaBusinessTime />,
   },
   {
     id: 3,
@@ -70,6 +73,7 @@ const projectDetails = [
     imgUrl:
       'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721114299/ldqycikwscqqm9xptgua.png',
     date: 'March-2024',
+    icon: <FaCreditCard />,
   },
 ]
 
@@ -92,7 +96,7 @@ const Timeline = props => {
           contentArrowStyle={{borderRight: '7px solid  rgb(33, 150, 243)'}}
           date={eachItem.date}
           iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
-          icon={<IoLogoWhatsapp />}
+          icon={eachItem.icon}
         >
           <img
             className="git-visualizer-img"
@@ -115,7 +119,7 @@ const Timeline = props => {
       ))}
       <VerticalTimelineElement
         iconStyle={{background: 'rgb(16, 204, 82)', color: '#fff'}}
-        icon={<IoLogoWhatsapp />}
+        icon={<FaStar />}
       />
     </VerticalTimeline>
   )
