@@ -275,7 +275,11 @@ class Home extends Component {
                 </h1>
                 <ul className="edu-card-cont">
                   {educationDetails.map(eachItem => (
-                    <EducationCard educationData={eachItem} key={eachItem.id} />
+                    <EducationCard
+                      educationData={eachItem}
+                      isDarkMode={darkMode}
+                      key={eachItem.id}
+                    />
                   ))}
                 </ul>
               </div>

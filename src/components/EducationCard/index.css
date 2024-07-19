@@ -47,14 +47,14 @@
   font-family: AudioWide;
   margin: 0;
   padding-bottom: 10px;
-  color: #ffffff;
+  color: #790b61;
   display: flex;
   align-items: center;
 }
 
 .institute-link-icon {
   font-size: 15px;
-  color: #ca74b8;
+  color: #ffffff;
   margin-left: 10px;
 }
 
@@ -64,19 +64,26 @@
 
 .course-h1 {
   font-family: AudioWide;
-  /* color: #16801e; */
-  color: #a5188e;
+  color: #ffffff;
   margin: 0;
   padding-bottom: 10px;
 }
 
+.inst-dark .institute-h1 {
+  color: #16801e;
+}
+
 .duration-para {
   font-family: AudioWide;
-  color: #c2a70c;
+  color: #46ffe6;
   margin: 0;
   padding-bottom: 10px;
   display: flex;
   align-items: center;
+}
+
+.inst-dark .duration-para {
+  color: #c2a70c;
 }
 
 .duration-icon {

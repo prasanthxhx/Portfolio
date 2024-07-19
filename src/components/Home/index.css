@@ -55,8 +55,8 @@
 
 .profile-pic {
   width: 90%;
-  border-radius: 400px;
   border: 2px solid #ffffff;
+  border-radius: 400px;
   margin-top: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   animation: moveUpDown 3s infinite alternate ease-in-out;
@@ -331,6 +331,7 @@
 
 .dark-extra-certificates-section {
   background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720533070/qoqhkkkqccem1rvju2hz.jpg');
+  background-size: cover;
 }
 
 .edu-cert-icon {
@@ -362,7 +363,7 @@
 }
 
 .dark-project-section {
-  background: #131842;
+  background: linear-gradient(147deg, #0b2b3b, #1a4a57);
 }
 
 @media screen and (min-width: 576px) {

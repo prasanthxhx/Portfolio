@@ -12,6 +12,12 @@
   z-index: 1000;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  transition: 0.2s ease-in-out;
+}
+
+.nav-hidden {
+  top: -60px;
+  transition: 0.4s ease-in-out;
 }
 
 .profile-logo {
@@ -111,13 +117,13 @@
   height: auto;
   outline: none;
   border: none;
-  background-color: inherit;
   font-size: 15px;
   padding: 5px 10px;
   position: relative;
   cursor: pointer;
   font-family: AudioWide;
   font-weight: 100;
+  border-radius: 5px;
 }
 
 .nav-link-btn::before {
@@ -133,6 +139,8 @@
   border-top: solid 0px #333;
   border-left: solid 0px #333;
   transition: all 0.4s ease-in-out;
+  background-color: aqua;
+  border-radius: 5px;
 }
 
 .nav-link-btn::after {
@@ -148,14 +156,14 @@
   border-bottom: solid 0px #333;
   border-right: solid 0px #333;
   transition: all 0.4s ease-in-out;
-  background-color: #41a5d3;
+  border-radius: 5px;
 }
 
 .nav-link-btn:hover::before {
   transform: translate(0%, 0%) scaleX(1) scaleY(1);
   border-top: solid 1px #41a5d3;
   border-left: solid 1px #41a5d3;
-  border-radius: 5px;
+  background-color: transparent;
 }
 
 .nav-link-btn:hover::after {
@@ -163,11 +171,25 @@
   border-bottom: solid 1px #41a5d3;
   border-right: solid 1px #41a5d3;
   background-color: transparent;
-  border-radius: 5px;
 }
 
 .nav-dark {
-  color: #e0e9bf;
+  color: #f0f0f0ef;
+  background-color: #151525;
+}
+
+.nav-dark::before {
+  background-color: #5bcc6a;
+}
+
+.nav-dark:hover::before {
+  border-top: solid 1px #4dd35e;
+  border-left: solid 1px #4dd35e;
+}
+
+.nav-dark:hover::after {
+  border-bottom: solid 1px #4dd35e;
+  border-right: solid 1px #4dd35e;
 }
 
 @media screen and (min-width: 576px) {

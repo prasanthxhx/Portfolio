@@ -4,7 +4,6 @@ import {
 } from 'react-vertical-timeline-component'
 import {v4 as uuidv4} from 'uuid'
 import {FaGithub, FaBusinessTime, FaCreditCard, FaStar} from 'react-icons/fa'
-import {IoLogoWhatsapp} from 'react-icons/io'
 import 'react-vertical-timeline-component/style.min.css'
 import './index.css'
 

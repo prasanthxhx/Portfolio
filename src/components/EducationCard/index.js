@@ -3,7 +3,7 @@ import {IoIosTime} from 'react-icons/io'
 import './index.css'
 
 const EducationCard = props => {
-  const {educationData} = props
+  const {educationData, isDarkMode} = props
   const {
     id,
     instituteName,
@@ -22,7 +22,7 @@ const EducationCard = props => {
         alt="institute-img"
       />
       <hr className="inst-hr-line" />
-      <div className="institute-description">
+      <div className={`institute-description ${isDarkMode ? 'inst-dark' : ''}`}>
         <div className="inst-h1-cont">
           {' '}
           <a

@@ -6,14 +6,40 @@ import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
 class Header extends Component {
-  state = {hamStatus: false}
+  constructor(props) {
+    super(props)
+    this.state = {
+      hamStatus: false,
+      scrollPosition: 0,
+      showNavbar: true,
+    }
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll() {
+    const currentScrollPos = window.pageYOffset
+    const {scrollPosition} = this.state
+
+    this.setState({
+      showNavbar: scrollPosition > currentScrollPos || currentScrollPos < 10,
+      scrollPosition: currentScrollPos,
+    })
+  }
 
   onClickHamBtn = () => {
     this.setState(prevState => ({hamStatus: !prevState.hamStatus}))
   }
 
   render() {
-    const {hamStatus} = this.state
+    const {hamStatus, showNavbar} = this.state
     const navLinksClassName = hamStatus ? 'nav-ul-cont-dynamic' : ''
 
     return (
@@ -23,7 +49,9 @@ class Header extends Component {
           const navDarkClassName = darkMode ? 'nav-dark' : ''
 
           return (
-            <nav className="navbar">
+            <nav
+              className={`navbar ${showNavbar ? 'nav-visible' : 'nav-hidden'}`}
+            >
               <div className="nav-cont-1">
                 <img
                   className="profile-logo"
