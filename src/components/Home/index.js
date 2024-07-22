@@ -308,8 +308,9 @@ class Home extends Component {
                   <RiComputerFill className="edu-icon" />
                   Projects
                 </h1>
-
-                <Timeline />
+                <div className="project-timeline-cont">
+                  <Timeline />
+                </div>
               </div>
 
               <div

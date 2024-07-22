@@ -366,6 +366,10 @@
   background: linear-gradient(147deg, #0b2b3b, #1a4a57);
 }
 
+.project-timeline-cont {
+  width: 100%;
+}
+
 @media screen and (min-width: 576px) {
   .profile-pic {
     width: 65%;

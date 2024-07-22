@@ -3,7 +3,13 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component'
 import {v4 as uuidv4} from 'uuid'
-import {FaGithub, FaBusinessTime, FaCreditCard, FaStar} from 'react-icons/fa'
+import {
+  FaGithub,
+  FaBusinessTime,
+  FaCreditCard,
+  FaStar,
+  FaExternalLinkAlt,
+} from 'react-icons/fa'
 import 'react-vertical-timeline-component/style.min.css'
 import './index.css'
 
@@ -29,6 +35,7 @@ const projectDetails = [
       'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721113726/bpc3p1pc5oyzv0ythezr.png',
     date: 'May-2024',
     icon: <FaGithub />,
+    projectLink: 'https://gitprofanths.ccbp.tech',
   },
   {
     id: 2,
@@ -51,6 +58,7 @@ const projectDetails = [
       'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721115221/igeqbnopki2vbrxpbclg.png',
     date: 'April-2024',
     icon: <FaBusinessTime />,
+    projectLink: 'https://jobbyanths.ccbp.tech',
   },
   {
     id: 3,
@@ -73,6 +81,7 @@ const projectDetails = [
       'https://res.cloudinary.com/dkk6a7svu/image/upload/v1721114299/ldqycikwscqqm9xptgua.png',
     date: 'March-2024',
     icon: <FaCreditCard />,
+    projectLink: 'https://nxtanths.ccbp.tech',
   },
 ]
 
@@ -84,7 +93,7 @@ const getRandColor = () => {
 
 const Timeline = props => {
   return (
-    <VerticalTimeline>
+    <VerticalTimeline className="vertical-timeline-outside">
       {projectDetails.map(eachItem => (
         <VerticalTimelineElement
           className="vertical-timeline-element--work custom-timeline-element"
@@ -103,7 +112,17 @@ const Timeline = props => {
             alt="project-img"
           />
           <div>
-            <h1 className="project-h1">{eachItem.title}</h1>
+            <a
+              className="anchor-link-project"
+              href={eachItem.projectLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h1 className="project-h1">
+                {eachItem.title}{' '}
+                <FaExternalLinkAlt className="project-link-icon" />
+              </h1>
+            </a>
             <p className="project-desc">{eachItem.description}</p>
             <h4 className="tech-used-h1">Technologies Used</h4>
             <ul className="technologies-ul-cont">
