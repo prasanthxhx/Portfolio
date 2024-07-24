@@ -200,7 +200,10 @@ class Home extends Component {
 
           return (
             <div className="home-bg-cont">
-              <div className={`home-cont-1 ${darkModeClassName}`}>
+              <div
+                id="homeSection"
+                className={`home-cont-1 ${darkModeClassName}`}
+              >
                 <Header />
                 <div className="about-me-section">
                   <div className="about-me-cont">
@@ -267,6 +270,7 @@ class Home extends Component {
                 </div>
               </div>
               <div
+                id="educationSection"
                 className={`education-section ${darkMode ? 'dark-edu' : ''}`}
               >
                 <h1 className="edu-h1">
@@ -285,6 +289,7 @@ class Home extends Component {
               </div>
 
               <div
+                id="skillsSection"
                 className={`skills-section ${darkMode ? 'dark-skills' : ''}`}
               >
                 <h1 className="edu-h1">
@@ -300,6 +305,7 @@ class Home extends Component {
               </div>
 
               <div
+                id="projectsSection"
                 className={`project-section ${
                   darkMode ? 'dark-project-section' : ''
                 }`}
@@ -314,6 +320,7 @@ class Home extends Component {
               </div>
 
               <div
+                id="moreCertificatesSection"
                 className={`extra-certificates-section ${
                   darkMode ? 'dark-extra-certificates-section' : ''
                 }`}

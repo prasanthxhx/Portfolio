@@ -38,6 +38,13 @@ class Header extends Component {
     this.setState(prevState => ({hamStatus: !prevState.hamStatus}))
   }
 
+  scrollToSection = event => {
+    event.preventDefault()
+    const targetId = event.currentTarget.getAttribute('href').substring(1)
+    const targetSection = document.getElementById(targetId)
+    targetSection.scrollIntoView({behavior: 'smooth'})
+  }
+
   render() {
     const {hamStatus, showNavbar} = this.state
     const navLinksClassName = hamStatus ? 'nav-ul-cont-dynamic' : ''
@@ -75,54 +82,84 @@ class Header extends Component {
               <div className={`nav-cont-2 ${navLinksClassName}`}>
                 <ul className="nav-ul-cont">
                   <li className="nav-link">
-                    <button
-                      className={`nav-link-btn ${navDarkClassName}`}
-                      type="button"
-                      href="#"
+                    <a
+                      className="anchor-link"
+                      href="#homeSection"
+                      rel="noreferrer"
+                      onClick={this.scrollToSection}
                     >
-                      <FcApproval className="nav-link-logo" />
-                      about me
-                    </button>
+                      <button
+                        className={`nav-link-btn ${navDarkClassName}`}
+                        type="button"
+                      >
+                        <FcApproval className="nav-link-logo" />
+                        about me
+                      </button>
+                    </a>
                   </li>
                   <li className="nav-link">
-                    <button
-                      className={`nav-link-btn ${navDarkClassName}`}
-                      type="button"
-                      href="#"
+                    <a
+                      className="anchor-link"
+                      href="#educationSection"
+                      rel="noreferrer"
+                      onClick={this.scrollToSection}
                     >
-                      <FcApproval className="nav-link-logo" />
-                      Education
-                    </button>
+                      <button
+                        className={`nav-link-btn ${navDarkClassName}`}
+                        type="button"
+                      >
+                        <FcApproval className="nav-link-logo" />
+                        Education
+                      </button>
+                    </a>
                   </li>
                   <li className="nav-link">
-                    <button
-                      className={`nav-link-btn ${navDarkClassName}`}
-                      type="button"
-                      href="#"
+                    <a
+                      className="anchor-link"
+                      href="#skillsSection"
+                      rel="noreferrer"
+                      onClick={this.scrollToSection}
                     >
-                      <FcApproval className="nav-link-logo" />
-                      Skills
-                    </button>
+                      <button
+                        className={`nav-link-btn ${navDarkClassName}`}
+                        type="button"
+                      >
+                        <FcApproval className="nav-link-logo" />
+                        Skills
+                      </button>
+                    </a>
                   </li>
                   <li className="nav-link">
-                    <button
-                      className={`nav-link-btn ${navDarkClassName}`}
-                      type="button"
-                      href="#"
+                    <a
+                      className="anchor-link"
+                      href="#projectsSection"
+                      rel="noreferrer"
+                      onClick={this.scrollToSection}
                     >
-                      <FcApproval className="nav-link-logo" />
-                      Projects
-                    </button>
+                      <button
+                        className={`nav-link-btn ${navDarkClassName}`}
+                        type="button"
+                      >
+                        <FcApproval className="nav-link-logo" />
+                        Projects
+                      </button>
+                    </a>
                   </li>
                   <li className="nav-link">
-                    <button
-                      className={`nav-link-btn ${navDarkClassName}`}
-                      type="button"
-                      href="#"
+                    <a
+                      className="anchor-link"
+                      href="#moreCertificatesSection"
+                      rel="noreferrer"
+                      onClick={this.scrollToSection}
                     >
-                      <FcApproval className="nav-link-logo" />
-                      Projects
-                    </button>
+                      <button
+                        className={`nav-link-btn ${navDarkClassName}`}
+                        type="button"
+                      >
+                        <FcApproval className="nav-link-logo" />
+                        Certificates
+                      </button>
+                    </a>
                   </li>
                 </ul>
               </div>

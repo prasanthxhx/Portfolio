@@ -1,6 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   background-color: #ffffff3b;
-  /* background-color: #ffffff; */
   width: 90%;
   margin-top: 10px;
   border-radius: 11px;
@@ -41,7 +44,7 @@
 }
 
 .hamburger svg {
-  height: 2.5em;
+  height: 2em;
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -110,13 +113,14 @@
   border: 0px;
   cursor: pointer;
   font-family: AudioWide;
+  font-size: 0.8em;
   font-weight: 100;
   border-radius: 10px;
   transition: 0.4s ease-out;
 }
 
 .nav-link-btn:hover {
-  background-color: rgb(95, 207, 183);
+  background-color: rgb(113, 231, 215);
   transition: 0.4s ease-out;
 }
 
