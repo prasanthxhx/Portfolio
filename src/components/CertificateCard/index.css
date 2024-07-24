@@ -196,3 +196,18 @@
   font-size: 16px;
   font-style: italic;
 }
+
+/* scroll-animation */
+
+.certificate-scroll-item {
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.certificate-scroll-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}

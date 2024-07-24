@@ -221,9 +221,19 @@ class Home extends Component {
                       WEB DEVELOPER
                     </h1>
                     <div className="contact-cont">
-                      <button className="contact-btn profile-dot" type="button">
-                        <FaGithub />
-                      </button>
+                      <a
+                        className="anchor-link"
+                        href="https://github.com/prasanthxhx/"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <button
+                          className="contact-btn profile-dot"
+                          type="button"
+                        >
+                          <FaGithub />
+                        </button>
+                      </a>
                       <button
                         onClick={this.onClickPhoneBtn}
                         className="contact-btn phone-btn profile-dot"
@@ -235,12 +245,20 @@ class Home extends Component {
                         +91 9943474260
                       </div>
                     </div>
-                    <button className="email-btn" type="button">
-                      <span className="profile-dot mail-icon">
-                        <IoMdMailUnread />{' '}
-                      </span>
-                      Contact Me
-                    </button>
+                    <a
+                      className="anchor-link"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=prasanth20042000@gmail.com&su=Subject&body=Body%20text"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {' '}
+                      <button className="email-btn" type="button">
+                        <span className="profile-dot mail-icon">
+                          <IoMdMailUnread />{' '}
+                        </span>
+                        Contact Me
+                      </button>
+                    </a>
                   </div>
                   <div className="profile-pic-cont">
                     <img
@@ -258,12 +276,26 @@ class Home extends Component {
                         <FaPlayCircle />
                       </button>
                       <div className={`extra-buttons ${extraButtonsClass}`}>
-                        <button className="extra-button profile-dot left">
-                          <FaInstagram />
-                        </button>
-                        <button className="extra-button profile-dot right">
-                          <FaLinkedinIn />
-                        </button>
+                        <a
+                          className="anchor-link"
+                          href="https://www.instagram.com/prasanth.abrin/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <button className="extra-button profile-dot left">
+                            <FaInstagram />
+                          </button>
+                        </a>
+                        <a
+                          className="anchor-link"
+                          href="https://www.linkedin.com/in/prasanth-mani/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <button className="extra-button profile-dot right">
+                            <FaLinkedinIn />
+                          </button>
+                        </a>
                       </div>
                     </div>
                   </div>
