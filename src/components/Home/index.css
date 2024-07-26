@@ -355,6 +355,7 @@
 
 .project-section {
   background: linear-gradient(147deg, #205072, #329d9c);
+  /* background-color: #25a18e; */
   background-size: cover;
   min-height: 100vh;
   height: 100%;
@@ -368,6 +369,13 @@
 
 .project-timeline-cont {
   width: 100%;
+}
+
+/* contact me section */
+.contact-me-section {
+  background-color: #94d2bd;
+  min-height: 100vh;
+  height: 100%;
 }
 
 @media screen and (min-width: 576px) {
@@ -430,4 +438,96 @@
     width: 65%;
     font-size: 1.1em;
   }
+}
+
+/* door opening animation */
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+#app-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#animation-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.animation-cont-before {
+  position: absolute;
+  height: 100vh !important;
+}
+
+.door {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #000000;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+#door-left {
+  left: 0;
+  animation: openLeft 3s forwards;
+  justify-content: flex-end;
+}
+
+#door-right {
+  right: 0;
+  animation: openRight 3s forwards;
+  justify-content: flex-start;
+}
+
+@keyframes openLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
+@keyframes openRight {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -50%;
+  }
+}
+
+#homepage-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.door-h1 {
+  font-family: AudioWide;
+  color: #feb47b;
+  font-size: 2.5em;
+  padding: 1em;
 }

@@ -36,7 +36,7 @@ const educationDetails = [
   {
     id: 2,
     instituteName: 'SSM College of Engineering, Namakkal',
-    specialization: 'Bachelor of Engineering',
+    specialization: 'BE in ECE',
     description:
       'B.E (Bachelor of Engineering)_Electronics and Communication Engineering (ECE)',
     date: '2017 - 2021',
@@ -174,7 +174,26 @@ const certificateDetails = [
 ]
 
 class Home extends Component {
-  state = {buttonsVisible: false, phoneBtnVisible: false}
+  constructor(props) {
+    super(props)
+    this.state = {
+      animationFinished: false,
+      buttonsVisible: false,
+      phoneBtnVisible: false,
+    }
+  }
+
+  componentDidMount() {
+    // adding no-scroll class to body
+    document.body.classList.add('no-scroll')
+
+    // to hide the doors after the animation
+    setTimeout(() => {
+      this.setState({animationFinished: true})
+      // Remove the no-scroll class from body
+      document.body.classList.remove('no-scroll')
+    }, 3000)
+  }
 
   toggleButtons = () => {
     this.setState(prevState => ({
@@ -187,10 +206,10 @@ class Home extends Component {
   }
 
   render() {
-    const {buttonsVisible, phoneBtnVisible} = this.state
+    const {buttonsVisible, phoneBtnVisible, animationFinished} = this.state
     const extraButtonsClass = buttonsVisible ? 'visible' : ''
     const phoneBtnClass = phoneBtnVisible ? 'phone-visible' : ''
-
+    console.log(`animation finished ${animationFinished}`)
     return (
       <PortfolioContext.Consumer>
         {value => {
@@ -199,179 +218,205 @@ class Home extends Component {
           const darkModeClassName = darkMode ? 'dark' : ''
 
           return (
-            <div className="home-bg-cont">
-              <div
-                id="homeSection"
-                className={`home-cont-1 ${darkModeClassName}`}
-              >
-                <Header />
-                <div className="about-me-section">
-                  <div className="about-me-cont">
-                    <Typewriter />
-                    <p
-                      className={`about-me-para ${darkMode ? 'textDark' : ''}`}
-                    >
-                      A passionate individual who always thrives to work on end
-                      to end products which develop sustainable and scalable
-                      social and technical systems to create impact.
-                    </p>
-                    <h1 className="role-h1">
-                      MERN <br />
-                      FULL STACK <br />
-                      WEB DEVELOPER
+            <>
+              <div id="app-container">
+                <div
+                  id="animation-container"
+                  className={
+                    animationFinished ? 'hide' : 'animation-cont-before'
+                  }
+                >
+                  <div id="door-left" className="door">
+                    <h1 className="door-h1">HIRE</h1>
+                  </div>
+                  <div id="door-right" className="door">
+                    <h1 className="door-h1">ME</h1>
+                  </div>
+                </div>
+                <div id="homepage-content" className="home-bg-cont">
+                  <div
+                    id="homeSection"
+                    className={`home-cont-1 ${darkModeClassName}`}
+                  >
+                    <Header />
+                    <div className="about-me-section">
+                      <div className="about-me-cont">
+                        <Typewriter />
+                        <p
+                          className={`about-me-para ${
+                            darkMode ? 'textDark' : ''
+                          }`}
+                        >
+                          A passionate individual who always thrives to work on
+                          end to end products which develop sustainable and
+                          scalable social and technical systems to create
+                          impact.
+                        </p>
+                        <h1 className="role-h1">
+                          MERN <br />
+                          FULL STACK <br />
+                          WEB DEVELOPER
+                        </h1>
+                        <div className="contact-cont">
+                          <a
+                            className="anchor-link"
+                            href="https://github.com/prasanthxhx/"
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <button
+                              className="contact-btn profile-dot"
+                              type="button"
+                            >
+                              <FaGithub />
+                            </button>
+                          </a>
+                          <button
+                            onClick={this.onClickPhoneBtn}
+                            className="contact-btn phone-btn profile-dot"
+                            type="button"
+                          >
+                            <IoLogoWhatsapp />
+                          </button>
+                          <div className={`phone-cont ${phoneBtnClass}`}>
+                            +91 9943474260
+                          </div>
+                        </div>
+                        <a
+                          className="anchor-link"
+                          href="https://mail.google.com/mail/?view=cm&fs=1&to=prasanth20042000@gmail.com&su=Subject&body=Body%20text"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          {' '}
+                          <button className="email-btn" type="button">
+                            <span className="profile-dot mail-icon">
+                              <IoMdMailUnread />{' '}
+                            </span>
+                            Contact Me
+                          </button>
+                        </a>
+                      </div>
+                      <div className="profile-pic-cont">
+                        <img
+                          className="profile-pic"
+                          src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1719912556/IMG_20240702_145731_emoka4.jpg"
+                          alt="profile-pic"
+                        />
+
+                        <div className="button-container">
+                          <button
+                            onClick={this.toggleButtons}
+                            type="button"
+                            className="profile-dot"
+                          >
+                            <FaPlayCircle />
+                          </button>
+                          <div className={`extra-buttons ${extraButtonsClass}`}>
+                            <a
+                              className="anchor-link"
+                              href="https://www.instagram.com/prasanth.abrin/"
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              <button className="extra-button profile-dot left">
+                                <FaInstagram />
+                              </button>
+                            </a>
+                            <a
+                              className="anchor-link"
+                              href="https://www.linkedin.com/in/prasanth-mani/"
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              <button className="extra-button profile-dot right">
+                                <FaLinkedinIn />
+                              </button>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="educationSection"
+                    className={`education-section ${
+                      darkMode ? 'dark-edu' : ''
+                    }`}
+                  >
+                    <h1 className="edu-h1">
+                      <FaUserGraduate className="edu-icon" />
+                      Education
                     </h1>
-                    <div className="contact-cont">
-                      <a
-                        className="anchor-link"
-                        href="https://github.com/prasanthxhx/"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <button
-                          className="contact-btn profile-dot"
-                          type="button"
-                        >
-                          <FaGithub />
-                        </button>
-                      </a>
-                      <button
-                        onClick={this.onClickPhoneBtn}
-                        className="contact-btn phone-btn profile-dot"
-                        type="button"
-                      >
-                        <IoLogoWhatsapp />
-                      </button>
-                      <div className={`phone-cont ${phoneBtnClass}`}>
-                        +91 9943474260
-                      </div>
-                    </div>
-                    <a
-                      className="anchor-link"
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=prasanth20042000@gmail.com&su=Subject&body=Body%20text"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      {' '}
-                      <button className="email-btn" type="button">
-                        <span className="profile-dot mail-icon">
-                          <IoMdMailUnread />{' '}
-                        </span>
-                        Contact Me
-                      </button>
-                    </a>
+                    <ul className="edu-card-cont">
+                      {educationDetails.map(eachItem => (
+                        <EducationCard
+                          educationData={eachItem}
+                          isDarkMode={darkMode}
+                          key={eachItem.id}
+                        />
+                      ))}
+                    </ul>
                   </div>
-                  <div className="profile-pic-cont">
-                    <img
-                      className="profile-pic"
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1719912556/IMG_20240702_145731_emoka4.jpg"
-                      alt="profile-pic"
-                    />
 
-                    <div className="button-container">
-                      <button
-                        onClick={this.toggleButtons}
-                        type="button"
-                        className="profile-dot"
-                      >
-                        <FaPlayCircle />
-                      </button>
-                      <div className={`extra-buttons ${extraButtonsClass}`}>
-                        <a
-                          className="anchor-link"
-                          href="https://www.instagram.com/prasanth.abrin/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <button className="extra-button profile-dot left">
-                            <FaInstagram />
-                          </button>
-                        </a>
-                        <a
-                          className="anchor-link"
-                          href="https://www.linkedin.com/in/prasanth-mani/"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <button className="extra-button profile-dot right">
-                            <FaLinkedinIn />
-                          </button>
-                        </a>
-                      </div>
+                  <div
+                    id="skillsSection"
+                    className={`skills-section ${
+                      darkMode ? 'dark-skills' : ''
+                    }`}
+                  >
+                    <h1 className="edu-h1">
+                      <ImBooks className="edu-icon" />
+                      Skills
+                    </h1>
+
+                    <ul className="skills-ul-cont">
+                      {skillsDetails.map(eachItem => (
+                        <SkillsCard skillData={eachItem} key={eachItem.id} />
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div
+                    id="projectsSection"
+                    className={`project-section ${
+                      darkMode ? 'dark-project-section' : ''
+                    }`}
+                  >
+                    <h1 className="edu-h1">
+                      <RiComputerFill className="edu-icon" />
+                      Projects
+                    </h1>
+                    <div className="project-timeline-cont">
+                      <Timeline />
                     </div>
                   </div>
+
+                  <div
+                    id="moreCertificatesSection"
+                    className={`extra-certificates-section ${
+                      darkMode ? 'dark-extra-certificates-section' : ''
+                    }`}
+                  >
+                    <h1 className="edu-h1">
+                      <GiAchievement className="edu-icon edu-cert-icon" />
+                      More Cerificates
+                    </h1>
+
+                    <ul className="certificates-ul-cont">
+                      {certificateDetails.map(eachItem => (
+                        <CertificateCard
+                          certificateData={eachItem}
+                          key={eachItem.id}
+                        />
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="contact-me-section"></div>
                 </div>
               </div>
-              <div
-                id="educationSection"
-                className={`education-section ${darkMode ? 'dark-edu' : ''}`}
-              >
-                <h1 className="edu-h1">
-                  <FaUserGraduate className="edu-icon" />
-                  Education
-                </h1>
-                <ul className="edu-card-cont">
-                  {educationDetails.map(eachItem => (
-                    <EducationCard
-                      educationData={eachItem}
-                      isDarkMode={darkMode}
-                      key={eachItem.id}
-                    />
-                  ))}
-                </ul>
-              </div>
-
-              <div
-                id="skillsSection"
-                className={`skills-section ${darkMode ? 'dark-skills' : ''}`}
-              >
-                <h1 className="edu-h1">
-                  <ImBooks className="edu-icon" />
-                  Skills
-                </h1>
-
-                <ul className="skills-ul-cont">
-                  {skillsDetails.map(eachItem => (
-                    <SkillsCard skillData={eachItem} key={eachItem.id} />
-                  ))}
-                </ul>
-              </div>
-
-              <div
-                id="projectsSection"
-                className={`project-section ${
-                  darkMode ? 'dark-project-section' : ''
-                }`}
-              >
-                <h1 className="edu-h1">
-                  <RiComputerFill className="edu-icon" />
-                  Projects
-                </h1>
-                <div className="project-timeline-cont">
-                  <Timeline />
-                </div>
-              </div>
-
-              <div
-                id="moreCertificatesSection"
-                className={`extra-certificates-section ${
-                  darkMode ? 'dark-extra-certificates-section' : ''
-                }`}
-              >
-                <h1 className="edu-h1">
-                  <GiAchievement className="edu-icon edu-cert-icon" />
-                  More Cerificates
-                </h1>
-
-                <ul className="certificates-ul-cont">
-                  {certificateDetails.map(eachItem => (
-                    <CertificateCard
-                      certificateData={eachItem}
-                      key={eachItem.id}
-                    />
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </>
           )
         }}
       </PortfolioContext.Consumer>

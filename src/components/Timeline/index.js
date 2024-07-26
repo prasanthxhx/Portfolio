@@ -96,6 +96,7 @@ const Timeline = props => {
     <VerticalTimeline className="vertical-timeline-outside">
       {projectDetails.map(eachItem => (
         <VerticalTimelineElement
+          key={uuidv4()}
           className="vertical-timeline-element--work custom-timeline-element"
           contentStyle={{
             background: 'transparent',
