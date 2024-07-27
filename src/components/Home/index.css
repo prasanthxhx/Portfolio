@@ -487,13 +487,13 @@ html {
 
 #door-left {
   left: 0;
-  animation: openLeft 3s forwards;
+  animation: openLeft 5s forwards;
   justify-content: flex-end;
 }
 
 #door-right {
   right: 0;
-  animation: openRight 3s forwards;
+  animation: openRight 5s forwards;
   justify-content: flex-start;
 }
 

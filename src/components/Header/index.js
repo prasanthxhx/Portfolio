@@ -5,10 +5,39 @@ import DarkModeSwitch from '../DarkModeSwitch'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
+const navLinksList = [
+  {
+    id: 'homeSection',
+    section: 'about me',
+    logo: <FcApproval className="nav-link-logo" />,
+  },
+  {
+    id: 'educationSection',
+    section: 'Education',
+    logo: <FcApproval className="nav-link-logo" />,
+  },
+  {
+    id: 'skillsSection',
+    section: 'Skills',
+    logo: <FcApproval className="nav-link-logo" />,
+  },
+  {
+    id: 'projectsSection',
+    section: 'Projects',
+    logo: <FcApproval className="nav-link-logo" />,
+  },
+  {
+    id: 'moreCertificatesSection',
+    section: 'More CFTs',
+    logo: <FcApproval className="nav-link-logo" />,
+  },
+]
+
 class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      activeLink: 'homeSection',
       hamStatus: false,
       scrollPosition: 0,
       showNavbar: true,
@@ -18,10 +47,12 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScrollToGetActiveTab)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScrollToGetActiveTab)
   }
 
   handleScroll() {
@@ -32,6 +63,25 @@ class Header extends Component {
       showNavbar: scrollPosition > currentScrollPos || currentScrollPos < 10,
       scrollPosition: currentScrollPos,
     })
+  }
+
+  handleScrollToGetActiveTab = () => {
+    const sections = document.querySelectorAll('section')
+    let activeLink = this.state.activeLink
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect()
+      if (
+        rect.top <= window.innerHeight / 2 &&
+        rect.bottom >= window.innerHeight / 2
+      ) {
+        activeLink = section.getAttribute('id')
+      }
+    })
+
+    if (activeLink !== this.state.activeLink) {
+      this.setState({activeLink})
+    }
   }
 
   onClickHamBtn = () => {
@@ -46,7 +96,7 @@ class Header extends Component {
   }
 
   render() {
-    const {hamStatus, showNavbar} = this.state
+    const {hamStatus, showNavbar, activeLink} = this.state
     const navLinksClassName = hamStatus ? 'nav-ul-cont-dynamic' : ''
 
     return (
@@ -81,86 +131,26 @@ class Header extends Component {
               </div>
               <div className={`nav-cont-2 ${navLinksClassName}`}>
                 <ul className="nav-ul-cont">
-                  <li className="nav-link">
-                    <a
-                      className="anchor-link"
-                      href="#homeSection"
-                      rel="noreferrer"
-                      onClick={this.scrollToSection}
-                    >
-                      <button
-                        className={`nav-link-btn ${navDarkClassName}`}
-                        type="button"
+                  {navLinksList.map(eachItem => (
+                    <li className="nav-link" key={eachItem.id}>
+                      <a
+                        className="anchor-link"
+                        href={`#${eachItem.id}`}
+                        rel="noreferrer"
+                        onClick={this.scrollToSection}
                       >
-                        <FcApproval className="nav-link-logo" />
-                        about me
-                      </button>
-                    </a>
-                  </li>
-                  <li className="nav-link">
-                    <a
-                      className="anchor-link"
-                      href="#educationSection"
-                      rel="noreferrer"
-                      onClick={this.scrollToSection}
-                    >
-                      <button
-                        className={`nav-link-btn ${navDarkClassName}`}
-                        type="button"
-                      >
-                        <FcApproval className="nav-link-logo" />
-                        Education
-                      </button>
-                    </a>
-                  </li>
-                  <li className="nav-link">
-                    <a
-                      className="anchor-link"
-                      href="#skillsSection"
-                      rel="noreferrer"
-                      onClick={this.scrollToSection}
-                    >
-                      <button
-                        className={`nav-link-btn ${navDarkClassName}`}
-                        type="button"
-                      >
-                        <FcApproval className="nav-link-logo" />
-                        Skills
-                      </button>
-                    </a>
-                  </li>
-                  <li className="nav-link">
-                    <a
-                      className="anchor-link"
-                      href="#projectsSection"
-                      rel="noreferrer"
-                      onClick={this.scrollToSection}
-                    >
-                      <button
-                        className={`nav-link-btn ${navDarkClassName}`}
-                        type="button"
-                      >
-                        <FcApproval className="nav-link-logo" />
-                        Projects
-                      </button>
-                    </a>
-                  </li>
-                  <li className="nav-link">
-                    <a
-                      className="anchor-link"
-                      href="#moreCertificatesSection"
-                      rel="noreferrer"
-                      onClick={this.scrollToSection}
-                    >
-                      <button
-                        className={`nav-link-btn ${navDarkClassName}`}
-                        type="button"
-                      >
-                        <FcApproval className="nav-link-logo" />
-                        More CFTs
-                      </button>
-                    </a>
-                  </li>
+                        <button
+                          className={`nav-link-btn ${navDarkClassName} ${
+                            eachItem.id === activeLink ? 'active-tab-btn' : ''
+                          }`}
+                          type="button"
+                        >
+                          {eachItem.logo}
+                          {eachItem.section}
+                        </button>
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </nav>

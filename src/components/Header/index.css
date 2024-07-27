@@ -133,6 +133,14 @@ html {
   transition: 0.4s ease-out;
 }
 
+.nav-link-btn.active-tab-btn {
+  background-color: rgb(113, 231, 215);
+}
+
+.nav-dark.active-tab-btn {
+  background-color: rgb(194, 95, 207);
+}
+
 @media screen and (min-width: 768px) {
   .navbar {
     display: flex;

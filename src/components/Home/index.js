@@ -192,7 +192,7 @@ class Home extends Component {
       this.setState({animationFinished: true})
       // Remove the no-scroll class from body
       document.body.classList.remove('no-scroll')
-    }, 3000)
+    }, 5000)
   }
 
   toggleButtons = () => {
@@ -209,7 +209,7 @@ class Home extends Component {
     const {buttonsVisible, phoneBtnVisible, animationFinished} = this.state
     const extraButtonsClass = buttonsVisible ? 'visible' : ''
     const phoneBtnClass = phoneBtnVisible ? 'phone-visible' : ''
-    console.log(`animation finished ${animationFinished}`)
+
     return (
       <PortfolioContext.Consumer>
         {value => {
@@ -234,7 +234,7 @@ class Home extends Component {
                   </div>
                 </div>
                 <div id="homepage-content" className="home-bg-cont">
-                  <div
+                  <section
                     id="homeSection"
                     className={`home-cont-1 ${darkModeClassName}`}
                   >
@@ -337,8 +337,8 @@ class Home extends Component {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </section>
+                  <section
                     id="educationSection"
                     className={`education-section ${
                       darkMode ? 'dark-edu' : ''
@@ -357,9 +357,9 @@ class Home extends Component {
                         />
                       ))}
                     </ul>
-                  </div>
+                  </section>
 
-                  <div
+                  <section
                     id="skillsSection"
                     className={`skills-section ${
                       darkMode ? 'dark-skills' : ''
@@ -375,9 +375,9 @@ class Home extends Component {
                         <SkillsCard skillData={eachItem} key={eachItem.id} />
                       ))}
                     </ul>
-                  </div>
+                  </section>
 
-                  <div
+                  <section
                     id="projectsSection"
                     className={`project-section ${
                       darkMode ? 'dark-project-section' : ''
@@ -390,9 +390,9 @@ class Home extends Component {
                     <div className="project-timeline-cont">
                       <Timeline />
                     </div>
-                  </div>
+                  </section>
 
-                  <div
+                  <section
                     id="moreCertificatesSection"
                     className={`extra-certificates-section ${
                       darkMode ? 'dark-extra-certificates-section' : ''
@@ -411,7 +411,7 @@ class Home extends Component {
                         />
                       ))}
                     </ul>
-                  </div>
+                  </section>
 
                   <div className="contact-me-section"></div>
                 </div>
