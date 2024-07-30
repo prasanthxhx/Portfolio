@@ -17,6 +17,8 @@ import SkillsCard from '../SkillsCard'
 import CertificateCard from '../CertificateCard'
 import EducationCard from '../EducationCard'
 import Timeline from '../Timeline'
+import ContactMeForm from '../ContactMeForm'
+import SuccessMsg from '../SuccessMsg'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
@@ -173,6 +175,13 @@ const certificateDetails = [
   },
 ]
 
+const msgStatusConstants = {
+  initial: 'initial',
+  loading: 'loading',
+  success: 'success',
+  failure: 'failure',
+}
+
 class Home extends Component {
   constructor(props) {
     super(props)
@@ -180,6 +189,7 @@ class Home extends Component {
       animationFinished: false,
       buttonsVisible: false,
       phoneBtnVisible: false,
+      messageStatus: msgStatusConstants.initial,
     }
   }
 
@@ -205,10 +215,59 @@ class Home extends Component {
     this.setState(prevState => ({phoneBtnVisible: !prevState.phoneBtnVisible}))
   }
 
+  onChangeMsgStatus = message => {
+    this.setState({messageStatus: message})
+  }
+
+  renderLoadingViewElements = () => {
+    return (
+      <div className="pyramid-loader-cont">
+        <div class="pyramid-loader">
+          <div class="wrapper">
+            <span class="side side1"></span>
+            <span class="side side2"></span>
+            <span class="side side3"></span>
+            <span class="side side4"></span>
+            <span class="shadow"></span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  renderSuccessAndFailureViewElements = () => {
+    const {messageStatus} = this.state
+
+    return (
+      <SuccessMsg
+        msgStatus={messageStatus}
+        changeMsgStatus={this.onChangeMsgStatus}
+      />
+    )
+  }
+
   render() {
-    const {buttonsVisible, phoneBtnVisible, animationFinished} = this.state
+    const {
+      buttonsVisible,
+      phoneBtnVisible,
+      animationFinished,
+      messageStatus,
+    } = this.state
     const extraButtonsClass = buttonsVisible ? 'visible' : ''
     const phoneBtnClass = phoneBtnVisible ? 'phone-visible' : ''
+
+    const getCurrentView = () => {
+      switch (messageStatus) {
+        case msgStatusConstants.loading:
+          return this.renderLoadingViewElements()
+        case msgStatusConstants.success:
+          return this.renderSuccessAndFailureViewElements()
+        case msgStatusConstants.failure:
+          return this.renderSuccessAndFailureViewElements()
+        default:
+          return null
+      }
+    }
 
     return (
       <PortfolioContext.Consumer>
@@ -446,40 +505,12 @@ class Home extends Component {
                         alt="contact-me-img"
                       />
                       <div>
-                        <div class="form-container">
-                          <div class="form">
-                            <span class="heading">Get in touch</span>
-                            <input
-                              placeholder="Name"
-                              type="text"
-                              class="input"
-                            />
-                            <input
-                              placeholder="Email"
-                              id="mail"
-                              type="email"
-                              class="input"
-                            />
-                            <textarea
-                              placeholder="Say Hello"
-                              rows="10"
-                              cols="30"
-                              id="message"
-                              name="message"
-                              class="textarea"
-                            ></textarea>
-                            <div class="button-container">
-                              <div class="send-button">Send</div>
-                              <div class="reset-button-container">
-                                <div id="reset-btn" class="reset-button">
-                                  Reset
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <ContactMeForm
+                          changeMsgStatus={this.onChangeMsgStatus}
+                        />
                       </div>
                     </div>
+                    {getCurrentView()}
                   </div>
                 </div>
               </div>
