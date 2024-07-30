@@ -37,7 +37,7 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeLink: 'homeSection',
+      activeLink: navLinksList[0].id,
       hamStatus: false,
       scrollPosition: 0,
       showNavbar: true,

@@ -192,7 +192,7 @@ class Home extends Component {
       this.setState({animationFinished: true})
       // Remove the no-scroll class from body
       document.body.classList.remove('no-scroll')
-    }, 5000)
+    }, 1000)
   }
 
   toggleButtons = () => {
@@ -227,10 +227,35 @@ class Home extends Component {
                   }
                 >
                   <div id="door-left" className="door">
+                    <svg
+                      viewBox="0 0 100 100"
+                      preserveAspectRatio="none"
+                      className="door-svg"
+                    >
+                      <path
+                        d="M100 0 C 60 50, 60 50, 100 100 L 0 100 L 0 0 Z"
+                        fill="#588157"
+                      />
+                    </svg>
+                    <img
+                      className="welcome-door-img"
+                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1722089835/xx88ptipjxcu27eygz1g.svg"
+                      alt="welcome-img"
+                    />
                     <h1 className="door-h1">HIRE</h1>
                   </div>
                   <div id="door-right" className="door">
                     <h1 className="door-h1">ME</h1>
+                    <svg
+                      viewBox="0 0 100 100"
+                      preserveAspectRatio="none"
+                      className="door-svg"
+                    >
+                      <path
+                        d="M0 0 C 40 50, 40 50, 0 100 L 100 100 L 100 0 Z"
+                        fill="#588157"
+                      />
+                    </svg>
                   </div>
                 </div>
                 <div id="homepage-content" className="home-bg-cont">
@@ -413,7 +438,49 @@ class Home extends Component {
                     </ul>
                   </section>
 
-                  <div className="contact-me-section"></div>
+                  <div className="contact-me-section">
+                    <div className="contact-me-cont">
+                      <img
+                        className="contact-me-img"
+                        src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1722336346/mdp5bskvbnxa9dcdtk1w.svg"
+                        alt="contact-me-img"
+                      />
+                      <div>
+                        <div class="form-container">
+                          <div class="form">
+                            <span class="heading">Get in touch</span>
+                            <input
+                              placeholder="Name"
+                              type="text"
+                              class="input"
+                            />
+                            <input
+                              placeholder="Email"
+                              id="mail"
+                              type="email"
+                              class="input"
+                            />
+                            <textarea
+                              placeholder="Say Hello"
+                              rows="10"
+                              cols="30"
+                              id="message"
+                              name="message"
+                              class="textarea"
+                            ></textarea>
+                            <div class="button-container">
+                              <div class="send-button">Send</div>
+                              <div class="reset-button-container">
+                                <div id="reset-btn" class="reset-button">
+                                  Reset
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </>
