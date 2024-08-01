@@ -1,40 +1,39 @@
 import {Component} from 'react'
 import {MdSort} from 'react-icons/md'
 import {FcApproval} from 'react-icons/fc'
+import {FaUserGraduate, FaMailBulk} from 'react-icons/fa'
+import {ImBooks} from 'react-icons/im'
+import {GiAchievement} from 'react-icons/gi'
+import {RiComputerFill} from 'react-icons/ri'
 import DarkModeSwitch from '../DarkModeSwitch'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
 const navLinksList = [
   {
-    id: 'homeSection',
-    section: 'about me',
-    logo: <FcApproval className="nav-link-logo" />,
-  },
-  {
     id: 'educationSection',
     section: 'Education',
-    logo: <FcApproval className="nav-link-logo" />,
+    logo: <FaUserGraduate className="nav-link-logo" />,
   },
   {
     id: 'skillsSection',
     section: 'Skills',
-    logo: <FcApproval className="nav-link-logo" />,
+    logo: <ImBooks className="nav-link-logo" />,
   },
   {
     id: 'projectsSection',
     section: 'Projects',
-    logo: <FcApproval className="nav-link-logo" />,
+    logo: <RiComputerFill className="nav-link-logo" />,
   },
   {
     id: 'moreCertificatesSection',
     section: 'More CFTs',
-    logo: <FcApproval className="nav-link-logo" />,
+    logo: <GiAchievement className="nav-link-logo" />,
   },
   {
     id: 'contactMeSection',
     section: 'Contact me',
-    logo: <FcApproval className="nav-link-logo" />,
+    logo: <FaMailBulk className="nav-link-logo" />,
   },
 ]
 
@@ -42,7 +41,7 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeLink: navLinksList[0].id,
+      activeLink: 'aboutMeSection',
       hamStatus: false,
       scrollPosition: 0,
       showNavbar: true,
@@ -116,11 +115,22 @@ class Header extends Component {
               }`}
             >
               <div className="nav-cont-1">
-                <img
-                  className="profile-logo"
-                  src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1719133533/p96wrf93qcvjkq1c5oc4.jpg"
-                  alt="profile-logo"
-                />
+                <a
+                  className="anchor-link"
+                  href="#aboutMeSection"
+                  rel="noreferrer"
+                  onClick={this.scrollToSection}
+                >
+                  <img
+                    className={`profile-logo ${
+                      activeLink === 'aboutMeSection'
+                        ? 'active-about-me-tab'
+                        : ''
+                    }`}
+                    src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1719133533/p96wrf93qcvjkq1c5oc4.jpg"
+                    alt="profile-logo"
+                  />
+                </a>
                 <div className="nav-ham-cont">
                   <DarkModeSwitch changeToDarkMode={changeDarkMode} />
                   <label className="hamburger">

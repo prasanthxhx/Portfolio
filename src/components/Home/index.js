@@ -320,7 +320,7 @@ class Home extends Component {
                 </div>
                 <div id="homepage-content" className="home-bg-cont">
                   <section
-                    id="homeSection"
+                    id="aboutMeSection"
                     className={`home-cont-1 ${darkModeClassName}`}
                   >
                     <Header />
@@ -487,7 +487,7 @@ class Home extends Component {
                     </ul>
                   </section>
 
-                  <div
+                  <section
                     id="contactMeSection"
                     className={`contact-me-section ${
                       darkMode ? 'dark-contact-section' : ''
@@ -506,7 +506,7 @@ class Home extends Component {
                       </div>
                     </div>
                     {getCurrentView()}
-                  </div>
+                  </section>
                 </div>
               </div>
             </>

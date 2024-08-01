@@ -1,22 +1,22 @@
 /* background-colors */
 
 .color-1 {
-  background-color: #ffffff;
+  background-color: #ffffffc0;
 }
 .color-2 {
-  background-color: #4aecdf;
+  background-color: #4aecdec5;
 }
 .color-3 {
-  background-color: #4aec93;
+  background-color: #4aec93bd;
 }
 .color-4 {
-  background-color: #ec7975;
+  background-color: #ec7975c7;
 }
 .color-5 {
-  background-color: #ec4ae4;
+  background-color: #ec4ae4c7;
 }
 .color-6 {
-  background-color: #65ec4a;
+  background-color: #65ec4abd;
 }
 
 .vertical-timeline-outside {
@@ -52,6 +52,7 @@
 }
 
 .project-h1 {
+  color: #ffffff;
   font-family: AudioWide;
   font-size: 1.5em;
   transition: 0.4s ease-in-out;
@@ -81,7 +82,7 @@
 .tech-used-h1 {
   font-family: AudioWide;
   font-style: italic;
-  color: #56ff46;
+  color: #e4b363;
   font-size: 1em;
   font-weight: 500;
 }

@@ -3,11 +3,8 @@ html {
 }
 
 .navbar {
-  /* background-color: #ffffff3b; */
-  /* background-color: #e5e5e5; */
-  background-color: #001524;
+  background-color: #004346;
   width: 90%;
-  /* border-radius: 11px; */
   align-self: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 5px 8px 5px 8px;
@@ -31,7 +28,17 @@ html {
 .profile-logo {
   width: 35px;
   border-radius: 5px;
-  border: 2px solid #d341ba;
+  transition: 0.1s ease-in-out;
+}
+
+.active-about-me-tab {
+  border: 2px solid #e76f51;
+  transition: 0.1s ease-in-out;
+}
+
+.profile-logo:hover {
+  border: 2px solid #e76f51;
+  transition: 0.1s ease-in-out;
 }
 
 .nav-ham-cont {
@@ -55,7 +62,7 @@ html {
 
 .line {
   fill: none;
-  stroke: #d341ba;
+  stroke: #e76f51;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
@@ -100,7 +107,7 @@ html {
 }
 
 .nav-link {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .nav-ul-cont-dynamic {
@@ -108,8 +115,12 @@ html {
 }
 
 .nav-link-logo {
-  font-size: 20px;
-  margin-right: 8px;
+  font-size: 1.8em;
+  color: #000000;
+  background-color: #ffffff;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  margin: 0px 10px 0px 0px;
 }
 
 .nav-link-btn {
@@ -120,18 +131,23 @@ html {
   font-family: AudioWide;
   font-size: 0.8em;
   font-weight: 100;
-  border-radius: 10px;
+  border-radius: 50px;
   transition: 0.4s ease-out;
   color: #f0f0f0ef;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 15px 0 0;
 }
 
 .nav-link-btn:hover {
-  background-color: rgb(194, 95, 207);
+  background-color: #e76f51;
   transition: 0.4s ease-out;
 }
 
 .nav-link-btn.active-tab-btn {
-  background-color: rgb(194, 95, 207);
+  background-color: #e76f51;
+  transition: 0.4s ease-out;
 }
 
 @media screen and (min-width: 768px) {
@@ -160,15 +176,4 @@ html {
   .nav-link {
     margin-bottom: 0px;
   }
-  .nav-link-logo {
-    display: none;
-  }
 }
-
-/* @media screen and (min-width: 992px) {
-  .nav-ul-cont {
-    width: 70%;
-    margin-left: auto;
-  }
-  
-} */

@@ -1,8 +1,8 @@
 .switch {
   display: block;
   --width-of-switch: 3.5em;
-  --height-of-switch: 2em;
-  --size-of-icon: 1.4em;
+  --height-of-switch: 1.8em;
+  --size-of-icon: 1.2em;
   --slider-offset: 0.3em;
   position: relative;
   width: var(--width-of-switch);
@@ -48,7 +48,9 @@ input:checked + .slider {
 input:checked + .slider:before {
   left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
   background: #303136;
-  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  box-shadow:
+    inset -3px -2px 5px -2px #8983f7,
+    inset -10px -4px 0 0 #a3dafb;
 }
 
 @media screen and (min-width: 768px) {
