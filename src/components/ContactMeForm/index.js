@@ -23,10 +23,11 @@ class ContactMeForm extends Component {
   onSubmitForm = () => {
     const {name, email, message} = this.state
     const {changeMsgStatus} = this.props
-    changeMsgStatus('loading')
 
     if (name !== '' && email !== '' && message !== '') {
-      emailjs.send('sample', 'sample', {name, email, message}, 'smaple').then(
+      changeMsgStatus('loading')
+
+      emailjs.send('sample', 'sample', {name, email, message}, 'sample').then(
         response => {
           changeMsgStatus('success')
         },
@@ -49,13 +50,13 @@ class ContactMeForm extends Component {
     const {name, email, message} = this.state
 
     return (
-      <div class="form-container">
-        <div class="form">
-          <span class="heading">Get in touch</span>
+      <div className="form-container">
+        <div className="form">
+          <span className="heading">Get in touch</span>
           <input
             placeholder="Name"
             type="text"
-            class="input"
+            className="input"
             value={name}
             onChange={this.onChangeName}
           />
@@ -63,7 +64,7 @@ class ContactMeForm extends Component {
             placeholder="Email"
             id="mail"
             type="email"
-            class="input"
+            className="input"
             value={email}
             onChange={this.onChangeEmail}
           />
@@ -73,23 +74,23 @@ class ContactMeForm extends Component {
             cols="30"
             id="message"
             name="message"
-            class="textarea"
+            className="textarea"
             value={message}
             onChange={this.onChangeMessage}
           ></textarea>
-          <div class="button-container">
+          <div className="button-container">
             <button
               type="button"
-              class="send-button"
+              className="send-button"
               onClick={this.onSubmitForm}
             >
               Send
             </button>
-            <div class="reset-button-container">
+            <div className="reset-button-container">
               <button
                 type="button"
                 id="reset-btn"
-                class="reset-button"
+                className="reset-button"
                 onClick={this.onResetForm}
               >
                 Reset

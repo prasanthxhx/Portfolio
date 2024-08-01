@@ -19,6 +19,7 @@ import EducationCard from '../EducationCard'
 import Timeline from '../Timeline'
 import ContactMeForm from '../ContactMeForm'
 import SuccessMsg from '../SuccessMsg'
+import TitleCard from '../TitleCard'
 import PortfolioContext from '../../ReactContext/PortfolioContext'
 import './index.css'
 
@@ -428,10 +429,7 @@ class Home extends Component {
                       darkMode ? 'dark-edu' : ''
                     }`}
                   >
-                    <h1 className="edu-h1">
-                      <FaUserGraduate className="edu-icon" />
-                      Education
-                    </h1>
+                    <TitleCard title="Education" id="education" />
                     <ul className="edu-card-cont">
                       {educationDetails.map(eachItem => (
                         <EducationCard
@@ -449,10 +447,7 @@ class Home extends Component {
                       darkMode ? 'dark-skills' : ''
                     }`}
                   >
-                    <h1 className="edu-h1">
-                      <ImBooks className="edu-icon" />
-                      Skills
-                    </h1>
+                    <TitleCard title="Skills" id="skills" />
 
                     <ul className="skills-ul-cont">
                       {skillsDetails.map(eachItem => (
@@ -467,10 +462,8 @@ class Home extends Component {
                       darkMode ? 'dark-project-section' : ''
                     }`}
                   >
-                    <h1 className="edu-h1">
-                      <RiComputerFill className="edu-icon" />
-                      Projects
-                    </h1>
+                    <TitleCard title="Projects" id="projects" />
+
                     <div className="project-timeline-cont">
                       <Timeline />
                     </div>
@@ -482,10 +475,7 @@ class Home extends Component {
                       darkMode ? 'dark-extra-certificates-section' : ''
                     }`}
                   >
-                    <h1 className="edu-h1">
-                      <GiAchievement className="edu-icon edu-cert-icon" />
-                      More Cerificates
-                    </h1>
+                    <TitleCard title="More Cerificates" id="moreCertificates" />
 
                     <ul className="certificates-ul-cont">
                       {certificateDetails.map(eachItem => (
@@ -497,7 +487,12 @@ class Home extends Component {
                     </ul>
                   </section>
 
-                  <div className="contact-me-section">
+                  <div
+                    id="contactMeSection"
+                    className={`contact-me-section ${
+                      darkMode ? 'dark-contact-section' : ''
+                    }`}
+                  >
                     <div className="contact-me-cont">
                       <img
                         className="contact-me-img"

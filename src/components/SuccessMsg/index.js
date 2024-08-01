@@ -15,10 +15,12 @@ const SuccessMsg = props => {
 
   return (
     <div
-      class={`success-card ${msgStatus !== 'initial' ? 'show-msg-status' : ''}`}
+      className={`success-card ${
+        msgStatus !== 'initial' ? 'show-msg-status' : ''
+      }`}
     >
       <svg
-        class={`wave ${msgStatus !== 'success' ? 'failure-wave' : ''}`}
+        className={`wave ${msgStatus !== 'success' ? 'failure-wave' : ''}`}
         viewBox="0 0 1440 320"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -28,7 +30,7 @@ const SuccessMsg = props => {
         ></path>
       </svg>
       <div
-        class={`icon-container ${
+        className={`icon-container ${
           msgStatus !== 'success' ? 'failure-icon-cont' : ''
         }`}
       >
@@ -39,7 +41,7 @@ const SuccessMsg = props => {
             stroke-width="0"
             fill="currentColor"
             stroke="currentColor"
-            class="icon"
+            className="icon"
           >
             <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"></path>
           </svg>
@@ -50,7 +52,7 @@ const SuccessMsg = props => {
             stroke-width="0"
             fill="none"
             stroke="currentColor"
-            class="failure-icon"
+            className="failure-icon"
           >
             <path
               fill="currentColor"
@@ -62,12 +64,12 @@ const SuccessMsg = props => {
         )}
       </div>
       <div
-        class={`message-text-container ${
+        className={`message-text-container ${
           msgStatus !== 'success' ? 'failure-msg-cont' : ''
         }`}
       >
-        <p class="message-text">{actualMsg}</p>
-        <p class="sub-text">{actualMsgSubPara}</p>
+        <p className="message-text">{actualMsg}</p>
+        <p className="sub-text">{actualMsgSubPara}</p>
       </div>
       <button type="button" className="cross-icon" onClick={onChangeMsgStatus}>
         <svg
@@ -76,7 +78,7 @@ const SuccessMsg = props => {
           stroke-width="0"
           fill="none"
           stroke="currentColor"
-          class="cross-icon"
+          className="cross-icon"
         >
           <path
             fill="currentColor"

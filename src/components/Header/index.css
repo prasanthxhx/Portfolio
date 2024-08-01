@@ -3,10 +3,11 @@ html {
 }
 
 .navbar {
-  background-color: #ffffff3b;
+  /* background-color: #ffffff3b; */
+  /* background-color: #e5e5e5; */
+  background-color: #001524;
   width: 90%;
-  margin-top: 10px;
-  border-radius: 11px;
+  /* border-radius: 11px; */
   align-self: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 5px 8px 5px 8px;
@@ -16,6 +17,10 @@ html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: 0.2s ease-in-out;
+}
+
+.navbar-dark {
+  background-color: #001524;
 }
 
 .nav-hidden {
@@ -54,7 +59,8 @@ html {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -116,27 +122,15 @@ html {
   font-weight: 100;
   border-radius: 10px;
   transition: 0.4s ease-out;
-}
-
-.nav-link-btn:hover {
-  background-color: rgb(113, 231, 215);
-  transition: 0.4s ease-out;
-}
-
-.nav-dark {
   color: #f0f0f0ef;
 }
 
-.nav-dark:hover {
+.nav-link-btn:hover {
   background-color: rgb(194, 95, 207);
   transition: 0.4s ease-out;
 }
 
 .nav-link-btn.active-tab-btn {
-  background-color: rgb(113, 231, 215);
-}
-
-.nav-dark.active-tab-btn {
   background-color: rgb(194, 95, 207);
 }
 

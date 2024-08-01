@@ -2,7 +2,7 @@
 }
 
 .home-cont-1 {
-  background: linear-gradient(to right, #ffffff 50%, #5199d471 50%);
+  background-color: #004346;
   min-height: 100vh;
   height: 100%;
   display: flex;
@@ -12,11 +12,7 @@
 }
 
 .dark {
-  background: linear-gradient(to right, #01090cd0 50%, #000000de 50%);
-}
-
-.textDark {
-  color: #ffffffd3 !important;
+  background-color: #011627;
 }
 
 .about-me-section {
@@ -38,12 +34,17 @@
 .about-me-para {
   font-family: 'Changa', sans-serif;
   font-weight: 300;
-  color: #000000c9;
+  color: #ffffff7c;
   font-size: 1.2em;
   font-optical-sizing: auto;
-
   font-style: normal;
   line-height: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.textDark {
+  color: #ffffff6b !important;
 }
 
 .profile-pic-cont {
@@ -247,7 +248,7 @@
 /* education section */
 
 .education-section {
-  background: linear-gradient(147deg, #7bd5f5, #1f2f98);
+  background-color: #004346;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -255,8 +256,7 @@
 }
 
 .dark-edu {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720262598/c0rha2umxixtwhgxdxgd.jpg');
-  background-size: cover;
+  background: #011627;
 }
 
 .edu-h1 {
@@ -294,7 +294,7 @@
 /* skills section */
 
 .skills-section {
-  background-color: #38a3a5;
+  background-color: #004346;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -302,8 +302,7 @@
 }
 
 .dark-skills {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720322138/peehwny9p3yfjx2o27r6.jpg');
-  background-size: cover;
+  background-color: #011627;
 }
 
 .skills-ul-cont {
@@ -322,7 +321,7 @@
 /* extra certificates section */
 
 .extra-certificates-section {
-  background-color: #38a3a5;
+  background-color: #004346;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -330,8 +329,7 @@
 }
 
 .dark-extra-certificates-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720533070/qoqhkkkqccem1rvju2hz.jpg');
-  background-size: cover;
+  background-color: #011627;
 }
 
 .edu-cert-icon {
@@ -354,7 +352,7 @@
 /* projects section */
 
 .project-section {
-  background-color: #028090;
+  background-color: #004346;
   background-size: cover;
   min-height: 100vh;
   height: 100%;
@@ -372,7 +370,7 @@
 
 /* contact me section */
 .contact-me-section {
-  background-color: #011627;
+  background-color: #004346;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -380,8 +378,12 @@
   padding: 50px 0px 50px 0px;
 }
 
+.dark-contact-section {
+  background-color: #011627;
+}
+
 .contact-me-cont {
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -521,7 +523,7 @@
     justify-content: center;
   }
   .contact-me-img {
-    width: 40%;
+    width: 45%;
   }
   .contact-me-section {
     justify-content: center;

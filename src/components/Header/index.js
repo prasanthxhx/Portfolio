@@ -31,6 +31,11 @@ const navLinksList = [
     section: 'More CFTs',
     logo: <FcApproval className="nav-link-logo" />,
   },
+  {
+    id: 'contactMeSection',
+    section: 'Contact me',
+    logo: <FcApproval className="nav-link-logo" />,
+  },
 ]
 
 class Header extends Component {
@@ -103,11 +108,12 @@ class Header extends Component {
       <PortfolioContext.Consumer>
         {value => {
           const {darkMode, changeDarkMode} = value
-          const navDarkClassName = darkMode ? 'nav-dark' : ''
 
           return (
             <nav
-              className={`navbar ${showNavbar ? 'nav-visible' : 'nav-hidden'}`}
+              className={`navbar ${showNavbar ? 'nav-visible' : 'nav-hidden'} ${
+                darkMode ? 'navbar-dark' : ''
+              }`}
             >
               <div className="nav-cont-1">
                 <img
@@ -117,7 +123,7 @@ class Header extends Component {
                 />
                 <div className="nav-ham-cont">
                   <DarkModeSwitch changeToDarkMode={changeDarkMode} />
-                  <label class="hamburger">
+                  <label className="hamburger">
                     <input type="checkbox" onChange={this.onClickHamBtn} />
                     <svg viewBox="0 0 32 32">
                       <path
@@ -140,7 +146,7 @@ class Header extends Component {
                         onClick={this.scrollToSection}
                       >
                         <button
-                          className={`nav-link-btn ${navDarkClassName} ${
+                          className={`nav-link-btn  ${
                             eachItem.id === activeLink ? 'active-tab-btn' : ''
                           }`}
                           type="button"
