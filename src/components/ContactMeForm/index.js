@@ -20,7 +20,8 @@ class ContactMeForm extends Component {
     this.setState({message})
   }
 
-  onSubmitForm = () => {
+  onSubmitForm = event => {
+    event.preventDefault()
     const {name, email, message} = this.state
     const {changeMsgStatus} = this.props
 
@@ -51,7 +52,7 @@ class ContactMeForm extends Component {
 
     return (
       <div className="form-container">
-        <div className="form">
+        <form className="form" onSubmit={this.onSubmitForm}>
           <span className="heading">Get in touch</span>
           <input
             placeholder="Name"
@@ -79,11 +80,7 @@ class ContactMeForm extends Component {
             onChange={this.onChangeMessage}
           ></textarea>
           <div className="button-container">
-            <button
-              type="button"
-              className="send-button"
-              onClick={this.onSubmitForm}
-            >
+            <button type="submit" className="send-button">
               Send
             </button>
             <div className="reset-button-container">
@@ -97,7 +94,7 @@ class ContactMeForm extends Component {
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     )
   }

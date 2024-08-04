@@ -112,7 +112,7 @@
   display: block;
   font-size: 17px;
   font-weight: 400;
-  color: white;
+  color: #d6e2e9;
   text-align: center;
   letter-spacing: 2px;
   font-family: 'Changa', sans-serif;
@@ -156,7 +156,7 @@
 
 .skill-covered {
   font-family: 'Changa', sans-serif;
-  color: #ffffffe1;
+  color: #d6e2e9;
   font-size: 13px;
   font-weight: 500;
   padding: 0px 10px 0px 10px;
@@ -165,6 +165,7 @@
   text-align: center;
   border-radius: 50px;
   width: auto;
+  font-style: italic;
 }
 
 .anchor-cert-link {
@@ -202,7 +203,9 @@
 .certificate-scroll-item {
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .certificate-scroll-item.show {

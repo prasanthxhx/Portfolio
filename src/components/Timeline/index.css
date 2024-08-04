@@ -1,22 +1,22 @@
 /* background-colors */
 
 .color-1 {
-  background-color: #ffffffc0;
+  background-color: #47126b;
 }
 .color-2 {
-  background-color: #4aecdec5;
+  background-color: #03071e;
 }
 .color-3 {
-  background-color: #4aec93bd;
+  background-color: #e85b04d8;
 }
 .color-4 {
-  background-color: #ec7975c7;
+  background-color: #105161;
 }
 .color-5 {
-  background-color: #ec4ae4c7;
+  background-color: #c9184ab6;
 }
 .color-6 {
-  background-color: #65ec4abd;
+  background-color: #1c7c54;
 }
 
 .vertical-timeline-outside {
@@ -52,7 +52,7 @@
 }
 
 .project-h1 {
-  color: #ffffff;
+  color: #d6e2e9;
   font-family: AudioWide;
   font-size: 1.5em;
   transition: 0.4s ease-in-out;
@@ -76,13 +76,13 @@
 .project-desc {
   font-family: 'Changa', sans-serif;
   font-size: 1.3em;
-  color: #ffffffde;
+  color: #d6e2e9e8;
 }
 
 .tech-used-h1 {
   font-family: AudioWide;
   font-style: italic;
-  color: #e4b363;
+  color: #d6e2e9;
   font-size: 1em;
   font-weight: 500;
 }
@@ -100,17 +100,98 @@
   font-family: 'Changa', sans-serif;
   font-size: 1em;
   font-weight: 400;
-  color: #000000;
+  color: #d6e2e9;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
   width: auto;
   padding: 2px 10px 2px 10px;
+  font-style: italic;
 }
 
 @media screen and (min-width: 576px) {
   .git-visualizer-img {
     width: 250px;
   }
+}
+
+/* git repos button */
+
+.git-repos-btn {
+  position: relative;
+  width: 130px;
+  height: 35px;
+  border-radius: 30px;
+  background-color: #d6e2e9;
+  border: 1px #e4c1f9 solid;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.text1 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 22%;
+  font-family: 'AudioWide';
+  color: #000000;
+}
+
+.text2 {
+  position: absolute;
+  top: 25%;
+  left: -50px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #d6e2e9;
+  font-family: 'AudioWide';
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s;
+}
+
+.icon::before {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  z-index: -1;
+  content: '';
+  width: 130px;
+  height: 33px;
+  border-radius: 30px;
+  background-color: #051923;
+}
+
+.icon::after {
+  position: absolute;
+  left: 0.5px;
+  top: 0.5px;
+  z-index: -1;
+  content: '';
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: #d6e2e9;
+}
+
+.git-repos-btn:hover .icon {
+  transform: translateX(97.5px);
+  transition: transform 0.5s;
+}
+
+.git-repos-btn:hover .text2 {
+  transform: translateX(100px);
+  transition: transform 0.6s;
+}
+
+.git-repos-btn:active {
+  transform: scale(1.03);
+}
+
+.git-anchor-link {
+  text-decoration: none;
 }
