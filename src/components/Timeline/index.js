@@ -109,7 +109,7 @@ const Timeline = props => {
           }}
           contentArrowStyle={{borderRight: '7px solid  rgb(33, 150, 243)'}}
           date={eachItem.date}
-          iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
+          iconStyle={{background: '#eb5e28', color: '#000'}}
           icon={eachItem.icon}
         >
           <img

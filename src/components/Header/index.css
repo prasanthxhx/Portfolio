@@ -171,6 +171,9 @@ html {
   .nav-link {
     margin-bottom: 0px;
   }
+}
+
+@media screen and (min-width: 992px) {
   .nav-link-btn:hover {
     background-color: #e76f51;
     transition: 0.4s ease-out;

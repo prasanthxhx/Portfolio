@@ -1,16 +1,6 @@
 import {Component} from 'react'
-import {
-  FaPlayCircle,
-  FaLinkedinIn,
-  FaInstagram,
-  FaGithub,
-  FaUserGraduate,
-  FaExternalLinkAlt,
-} from 'react-icons/fa'
-import {IoLogoWhatsapp, IoMdMailUnread, IoIosTime} from 'react-icons/io'
-import {ImBooks} from 'react-icons/im'
-import {GiAchievement} from 'react-icons/gi'
-import {RiComputerFill} from 'react-icons/ri'
+import {FaPlayCircle, FaLinkedinIn, FaInstagram, FaGithub} from 'react-icons/fa'
+import {IoLogoWhatsapp, IoMdMailUnread} from 'react-icons/io'
 import Header from '../Header'
 import Typewriter from '../TypeWriting'
 import SkillsCard from '../SkillsCard'
@@ -187,23 +177,21 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      animationFinished: false,
       buttonsVisible: false,
       phoneBtnVisible: false,
       messageStatus: msgStatusConstants.initial,
+      loading: true,
     }
   }
 
   componentDidMount() {
-    // adding no-scroll class to body
-    document.body.classList.add('no-scroll')
+    this.timer = setTimeout(() => {
+      this.setState({loading: false})
+    }, 3000)
+  }
 
-    // to hide the doors after the animation
-    setTimeout(() => {
-      this.setState({animationFinished: true})
-      // Remove the no-scroll class from body
-      document.body.classList.remove('no-scroll')
-    }, 1000)
+  componentWillUnmount() {
+    clearTimeout(this.timer)
   }
 
   toggleButtons = () => {
@@ -223,13 +211,13 @@ class Home extends Component {
   renderLoadingViewElements = () => {
     return (
       <div className="pyramid-loader-cont">
-        <div class="pyramid-loader">
-          <div class="wrapper">
-            <span class="side side1"></span>
-            <span class="side side2"></span>
-            <span class="side side3"></span>
-            <span class="side side4"></span>
-            <span class="shadow"></span>
+        <div className="pyramid-loader">
+          <div className="wrapper">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+            <span className="shadow"></span>
           </div>
         </div>
       </div>
@@ -247,13 +235,22 @@ class Home extends Component {
     )
   }
 
+  renderInitialLoadingView = () => {
+    return (
+      <div className="initial-loader-cont">
+        <div className="loader-container">
+          <div className="loader"></div>
+          <div className="loader"></div>
+          <div className="loader"></div>
+          <div className="loader"></div>
+          <div className="loader"></div>
+        </div>
+      </div>
+    )
+  }
+
   render() {
-    const {
-      buttonsVisible,
-      phoneBtnVisible,
-      animationFinished,
-      messageStatus,
-    } = this.state
+    const {buttonsVisible, phoneBtnVisible, messageStatus, loading} = this.state
     const extraButtonsClass = buttonsVisible ? 'visible' : ''
     const phoneBtnClass = phoneBtnVisible ? 'phone-visible' : ''
 
@@ -279,45 +276,9 @@ class Home extends Component {
 
           return (
             <>
-              <div id="app-container">
-                <div
-                  id="animation-container"
-                  className={
-                    animationFinished ? 'hide' : 'animation-cont-before'
-                  }
-                >
-                  <div id="door-left" className="door">
-                    <svg
-                      viewBox="0 0 100 100"
-                      preserveAspectRatio="none"
-                      className="door-svg"
-                    >
-                      <path
-                        d="M100 0 C 60 50, 60 50, 100 100 L 0 100 L 0 0 Z"
-                        fill="#588157"
-                      />
-                    </svg>
-                    <img
-                      className="welcome-door-img"
-                      src="https://res.cloudinary.com/dkk6a7svu/image/upload/v1722089835/xx88ptipjxcu27eygz1g.svg"
-                      alt="welcome-img"
-                    />
-                    <h1 className="door-h1">HIRE</h1>
-                  </div>
-                  <div id="door-right" className="door">
-                    <h1 className="door-h1">ME</h1>
-                    <svg
-                      viewBox="0 0 100 100"
-                      preserveAspectRatio="none"
-                      className="door-svg"
-                    >
-                      <path
-                        d="M0 0 C 40 50, 40 50, 0 100 L 100 100 L 100 0 Z"
-                        fill="#588157"
-                      />
-                    </svg>
-                  </div>
-                </div>
+              {loading ? (
+                this.renderInitialLoadingView()
+              ) : (
                 <div id="homepage-content" className="home-bg-cont">
                   <section
                     id="aboutMeSection"
@@ -508,7 +469,7 @@ class Home extends Component {
                     {getCurrentView()}
                   </section>
                 </div>
-              </div>
+              )}
             </>
           )
         }}

@@ -3,7 +3,6 @@
 
 .home-cont-1 {
   background-color: #004346;
-  min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -32,8 +31,7 @@
 }
 
 .about-me-para {
-  font-family: 'Changa', sans-serif;
-  /* font-family:monospace ; */
+  font-family: monospace;
   font-weight: 300;
   color: #ffffff7c;
   font-size: 1.2em;
@@ -549,103 +547,81 @@
   }
 }
 
-/* door opening animation */
+/*initial loader animation  */
 
-body.no-scroll {
-  overflow: hidden;
+.initial-loader-cont {
+  background-color: #edf2f4;
   height: 100vh;
-}
-
-body,
-html {
-  overflow-x: hidden;
-}
-
-#app-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-#animation-container {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 10;
-}
-
-.animation-cont-before {
-  position: absolute;
-  height: 100vh !important;
-}
-
-.door {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background-color: #003049;
-  top: 0;
-  z-index: 10;
-  display: flex;
   align-items: center;
 }
 
-.door-svg {
-  width: 100%;
-  height: 90%;
+.loader-container {
+  background-color: #b0c4b1;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
-#door-left {
-  left: 0;
-  animation: openLeft 1s forwards;
-  justify-content: flex-end;
+.loader {
+  width: 20px;
+  height: 40px;
+  border-radius: 10px 50px;
+  box-shadow: 0px 0px 5px black;
+  animation: dominos 1s ease infinite;
 }
 
-#door-right {
-  right: 0;
-  animation: openRight 1s forwards;
-  justify-content: flex-start;
+.loader:nth-child(1) {
+  --left: 80px;
+  animation-delay: 0.325s;
+  background-color: #5d9960;
 }
 
-@keyframes openLeft {
-  0% {
-    left: 0;
+.loader:nth-child(2) {
+  --left: 70px;
+  animation-delay: 0.5s;
+  background-color: #82a587;
+}
+
+.loader:nth-child(3) {
+  left: 60px;
+  animation-delay: 0.625s;
+  background-color: #8bac74;
+}
+
+.loader:nth-child(4) {
+  animation-delay: 0.74s;
+  left: 50px;
+  background-color: #b9bf90;
+}
+
+.loader:nth-child(5) {
+  animation-delay: 0.865s;
+  left: 40px;
+  background-color: #e7d2ab;
+}
+
+@keyframes dominos {
+  50% {
+    opacity: 0.7;
   }
-  100% {
-    left: -50%;
+
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  80% {
+    opacity: 1;
   }
 }
 
-@keyframes openRight {
-  0% {
-    right: 0;
-  }
-  100% {
-    right: -50%;
-  }
-}
+/*for remove default scrollbar */
 
-#homepage-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.hide {
+::-webkit-scrollbar {
   display: none;
-}
-
-.door-h1 {
-  font-family: AudioWide;
-  color: #feb47b;
-  font-size: 2.5em;
-  padding: 1em;
-}
-
-.welcome-door-img {
-  width: 100px;
 }

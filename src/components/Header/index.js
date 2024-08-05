@@ -1,6 +1,4 @@
 import {Component} from 'react'
-import {MdSort} from 'react-icons/md'
-import {FcApproval} from 'react-icons/fc'
 import {FaUserGraduate, FaMailBulk} from 'react-icons/fa'
 import {ImBooks} from 'react-icons/im'
 import {GiAchievement} from 'react-icons/gi'
