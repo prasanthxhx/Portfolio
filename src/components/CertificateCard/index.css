@@ -1,3 +1,18 @@
+/* background images */
+
+.card-bg-1 .top-section {
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864925/muetogj8wlkmvdbagcps.jpg') !important;
+}
+.card-bg-2 .top-section {
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722865915/a0s0tw73xrytooo51yio.gif') !important;
+}
+.card-bg-3 .top-section {
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864926/pi1etklrkbfsls8hhd8w.jpg') !important;
+}
+.card-bg-4 .top-section {
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864925/pyongqna7ncnfiwxkoju.gif') !important;
+}
+
 .card {
   width: 250px;
   border-radius: 20px;
@@ -23,7 +38,6 @@
     rgb(4, 159, 187) 0%,
     rgb(80, 246, 255) 100%
   );
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1720938453/knj91idkee9jvuqkfdnc.jpg');
   background-size: cover;
   position: relative;
 }

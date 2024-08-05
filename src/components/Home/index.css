@@ -490,9 +490,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .home-cont-1 {
-    min-height: 0vh;
-  }
   .about-me-section {
     display: flex;
     justify-content: space-between;
@@ -534,9 +531,6 @@
 }
 
 @media screen and (min-width: 992px) {
-  .home-cont-1 {
-    min-height: 100vh;
-  }
   .role-h1 {
     font-size: 3em;
     letter-spacing: 10px;
@@ -550,7 +544,7 @@
 /*initial loader animation  */
 
 .initial-loader-cont {
-  background-color: #edf2f4;
+  background-color: #70a288;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -558,7 +552,7 @@
 }
 
 .loader-container {
-  background-color: #b0c4b1;
+  background-color: #022b3a;
   width: 200px;
   height: 200px;
   display: flex;

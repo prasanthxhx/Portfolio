@@ -32,10 +32,11 @@ class CertificateCard extends Component {
 
   render() {
     const {certificateData} = this.props
-    const {courseName, skillsCovered, certificateLink} = certificateData
+    const {id, courseName, skillsCovered, certificateLink} = certificateData
+    const specificCardBgClassName = `card-bg-${id}`
 
     return (
-      <li className="card certificate-scroll-item">
+      <li className={`card certificate-scroll-item ${specificCardBgClassName}`}>
         <div className="top-section">
           <div className="border"></div>
           <div className="icons">
