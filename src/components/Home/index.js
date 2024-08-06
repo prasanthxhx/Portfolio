@@ -126,8 +126,12 @@ const skillsDetails = [
 const certificateDetails = [
   {
     id: 1,
-    imgUrl:
-      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/lrl1onsbdlu5hhdy8aoh.png',
+    courseName: 'Software Engineer Intern',
+    skillsCovered: ['Problem Solving', 'SQL', 'Python'],
+    certificateLink: 'https://www.hackerrank.com/certificates/c9870e203d05',
+  },
+  {
+    id: 2,
     courseName: 'Exponential Performance Mindset',
     skillsCovered: [
       'Creating Personal Identity',
@@ -138,27 +142,21 @@ const certificateDetails = [
       'https://certificates.ccbp.in/intensive/xpm-4-0-fundamentals?id=DIDROTQQDQ',
   },
   {
-    id: 2,
-    imgUrl:
-      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/pdpvago2hvmcaxszbmup.png',
+    id: 3,
     courseName: 'Build Your Own Dynamic Web Application',
     skillsCovered: ['JavaScript'],
     certificateLink:
       'https://certificates.ccbp.in/intensive/dynamic-web-application?id=KUZPREKBCO',
   },
   {
-    id: 3,
-    imgUrl:
-      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/i6eja25f3wuwm73lzwog.png',
+    id: 4,
     courseName: 'Build Your Own Responsive Website',
     skillsCovered: ['Bootstrap', 'Flexbox'],
     certificateLink:
       'https://certificates.ccbp.in/intensive/responsive-website?id=QWXZMDDVIZ',
   },
   {
-    id: 4,
-    imgUrl:
-      'https://res.cloudinary.com/dkk6a7svu/image/upload/v1720434910/i6eja25f3wuwm73lzwog.png',
+    id: 5,
     courseName: 'Responsive Web Design Using Flexbox',
     skillsCovered: ['Flexbox'],
     certificateLink:
@@ -187,7 +185,7 @@ class Home extends Component {
   componentDidMount() {
     this.timer = setTimeout(() => {
       this.setState({loading: false})
-    }, 3000)
+    }, 0)
   }
 
   componentWillUnmount() {

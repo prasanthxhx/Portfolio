@@ -109,7 +109,11 @@ const Timeline = props => {
           }}
           contentArrowStyle={{borderRight: '7px solid  rgb(33, 150, 243)'}}
           date={eachItem.date}
-          iconStyle={{background: '#eb5e28', color: '#252422'}}
+          iconStyle={{
+            background: '#eb5e28',
+            color: '#252422',
+            filter: `drop-shadow(2px 4px 64px rgb(0, 238, 255))`,
+          }}
           icon={eachItem.icon}
         >
           <img
@@ -164,7 +168,11 @@ const Timeline = props => {
         </VerticalTimelineElement>
       ))}
       <VerticalTimelineElement
-        iconStyle={{background: 'rgb(16, 204, 82)', color: '#fff'}}
+        iconStyle={{
+          background: 'rgb(16, 204, 82)',
+          color: '#fff',
+          filter: `drop-shadow(2px 4px 64px rgb(0, 238, 255))`,
+        }}
         icon={<FaStar />}
       />
     </VerticalTimeline>

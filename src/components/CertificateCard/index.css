@@ -1,15 +1,18 @@
 /* background images */
 
 .card-bg-1 .top-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864925/muetogj8wlkmvdbagcps.jpg') !important;
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722954753/al3sotturwnojtzxtt7a.png') !important;
 }
 .card-bg-2 .top-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722865915/a0s0tw73xrytooo51yio.gif') !important;
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864925/muetogj8wlkmvdbagcps.jpg') !important;
 }
 .card-bg-3 .top-section {
-  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864926/pi1etklrkbfsls8hhd8w.jpg') !important;
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722865915/a0s0tw73xrytooo51yio.gif') !important;
 }
 .card-bg-4 .top-section {
+  background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864926/pi1etklrkbfsls8hhd8w.jpg') !important;
+}
+.card-bg-5 .top-section {
   background-image: url('https://res.cloudinary.com/dkk6a7svu/image/upload/v1722864925/pyongqna7ncnfiwxkoju.gif') !important;
 }
 

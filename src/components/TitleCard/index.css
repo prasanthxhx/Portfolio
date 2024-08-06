@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: flex-start;
   background: #edfbd8;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
   box-shadow: 0px 0px 5px -3px #111;
   margin-left: auto;
 }
